@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MyDose — Sublogos × Fontes · v6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&family=Space+Grotesk:wght@400..700&family=Outfit:wght@300..800&family=Lexend:wght@300..800&family=Figtree:wght@300..800&family=Clash+Display:wght@400..700&family=Plus+Jakarta+Sans:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B0B12; --panel:#15151F; --line:#26263A;
+    --paper:#F7F5F0; --pline:#E7E3D9;
+    --muted:#8B8798; --muted2:#5C5870;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--ink);color:var(--paper);font-family:'Plus Jakarta Sans',sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 34px}
+  .display{font-family:'Syne';font-weight:800;letter-spacing:-.035em;line-height:.96}
+  .kick{font-family:'JetBrains Mono';text-transform:uppercase;letter-spacing:.24em;font-size:11px}
+
+  /* ===== ORB ===== */
+  .orb{position:relative;border-radius:50%;flex:none;
+    background:
+      radial-gradient(circle at 50% 48%, rgba(255,255,255,.96), rgba(255,255,255,.42) 18%, transparent 46%),
+      radial-gradient(circle at 26% 24%, var(--e1), transparent 62%),
+      radial-gradient(circle at 74% 80%, var(--e2), transparent 64%),
+      radial-gradient(circle at 50% 50%, var(--base), var(--base));
+    box-shadow:0 14px 40px -12px var(--glow,rgba(200,92,224,.55));
+    animation:breathe 5.4s ease-in-out infinite}
+  @keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
+  @media(prefers-reduced-motion:reduce){.orb{animation:none}}
+
+  /* MASTER = orb original (PNG) */
+  .orb.o-master{background:url('orb-master.png') center/cover no-repeat;box-shadow:0 14px 40px -12px rgba(200,92,224,.55)}
+  /* sub-brand orb colors — soft luminous, mesma vibe do master */
+  .o-mind {--e1:#B49BFF;--e2:#6D28D9;--base:#9A77F0;--glow:rgba(124,58,237,.45)}  /* lavanda → violeta */
+  .o-phys {--e1:#5EEAA0;--e2:#15803D;--base:#27C26A;--glow:rgba(34,197,94,.45)}   /* verde */
+  .o-clin {--e1:#7CC4FF;--e2:#2D6BFF;--base:#4391F5;--glow:rgba(45,107,255,.5)}   /* azul */
+
+  /* HERO */
+  .hero{padding:84px 0 64px;overflow:hidden;position:relative}
+  .hero .bg{position:absolute;inset:0;background:
+    radial-gradient(circle at 82% 22%,rgba(201,92,224,.18),transparent 42%),
+    radial-gradient(circle at 12% 86%,rgba(108,62,255,.13),transparent 44%)}
+  .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+  @media(max-width:880px){.hero .wrap{grid-template-columns:1fr}}
+  .hero h1{font-size:clamp(44px,7.5vw,92px)}
+  .hero .lead{max-width:540px;color:#C8C5D2;font-size:17.5px;margin-top:22px}
+  .hero .ho{justify-self:center;width:min(60vw,280px);aspect-ratio:1}
+  .hero .swatches{display:flex;gap:10px;margin-top:26px;flex-wrap:wrap}
+  .sw{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:100px;padding:6px 12px 6px 8px;font-family:'JetBrains Mono';font-size:10px;letter-spacing:.06em;color:var(--muted)}
+  .sw .d{width:16px;height:16px;border-radius:50%}
+
+  /* ===== BRAND BLOCK ===== */
+  .block{padding:64px 0;border-top:1px solid var(--line)}
+  .bhead{display:flex;align-items:center;gap:18px;margin-bottom:30px;flex-wrap:wrap}
+  .bhead .bo{width:54px;aspect-ratio:1}
+  .bhead .bt{font-family:'Syne';font-weight:800;font-size:clamp(24px,3.4vw,36px);letter-spacing:-.03em}
+  .bhead .bt b{font-weight:800}
+  .bhead .hx{font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.06em;color:var(--muted2);margin-top:3px}
+
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:880px){.duo{grid-template-columns:1fr}}
+  .panel{border-radius:20px;padding:14px;border:1px solid var(--line)}
+  .panel.dark{background:#0E0E16}
+  .panel.lite{background:var(--paper);border-color:var(--pline)}
+  .plabel{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:8px 12px 14px}
+  .panel.dark .plabel{color:var(--muted)}
+  .panel.lite .plabel{color:#9A968A}
+  .lk{display:flex;align-items:center;gap:14px;padding:14px 14px;border-radius:12px;transition:.2s}
+  .lk + .lk{margin-top:2px}
+  .panel.dark .lk:hover{background:#15151F}
+  .panel.lite .lk:hover{background:#EEEBE2}
+  .lk .orb{width:34px;height:34px}
+  .lk .wm{font-size:27px;line-height:1;letter-spacing:-.03em}
+  .panel.dark .wm{color:var(--paper)}
+  .panel.lite .wm{color:var(--ink)}
+  .lk .ft{font-family:'JetBrains Mono';font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);margin-left:auto;align-self:center}
+  .lk .wmb{display:flex;flex-direction:column;line-height:1}
+  .lk .sub{font-size:13px;font-weight:500;letter-spacing:.01em;margin-top:3px}
+  .lk .tag{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;margin-top:5px}
+  .panel.dark .sub{color:rgba(247,245,240,.62)} .panel.lite .sub{color:rgba(11,11,18,.55)}
+  .panel.dark .tag{color:rgba(247,245,240,.5)}  .panel.lite .tag{color:rgba(11,11,18,.48)}
+
+  footer{padding:60px 0 84px;text-align:center;color:var(--muted);border-top:1px solid var(--line)}
+  footer .o{width:50px;aspect-ratio:1;margin:0 auto 18px}
+  .pill{display:inline-block;border:1px solid var(--line);border-radius:100px;padding:8px 18px;font-family:'JetBrains Mono';font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="bg"></div>
+  <div class="wrap">
+    <div>
+      <div class="kick" style="color:#C95CE0">MyDose · Sublogos × Fontes · v6 · Jun 2026</div>
+      <h1 class="display" style="margin-top:18px">Rosa<br>vira roxo<span style="color:#C95CE0">.</span></h1>
+      <p class="lead">O <b style="color:#fff">Master</b> agora usa o orb original que você subiu (<i>logo-my-dose-fit</i>) — roxo, rosa e âmbar, luminoso. Os sublogos (Mental, Physical, Clinics) recriam essa mesma vibe suave, só trocando a cor. Tudo aplicado nas 6 fontes, em fundo escuro e branco lado a lado.</p>
+      <div class="swatches">
+        <div class="sw"><span class="d" style="background:radial-gradient(circle at 32% 30%,#C77DFF,#FF6BAA 45%,#FFA34D)"></span>Master</div>
+        <div class="sw"><span class="d" style="background:linear-gradient(135deg,#C9B6FF,#6D28D9)"></span>Mental</div>
+        <div class="sw"><span class="d" style="background:linear-gradient(135deg,#9BF6B8,#15803D)"></span>Physical</div>
+        <div class="sw"><span class="d" style="background:linear-gradient(135deg,#9AD4FF,#2D6BFF)"></span>Clinics</div>
+      </div>
+    </div>
+    <div class="orb o-master ho"></div>
+  </div>
+</header>
+
+<!-- ====== MASTER ====== -->
+<div class="block">
+  <div class="wrap">
+    <div class="bhead">
+      <div class="orb o-master bo"></div>
+      <div><div class="bt">MyDose <span style="color:#C95CE0">Master</span></div><div class="hx">orb original · roxo + rosa + âmbar · logo-my-dose-fit.png</div></div>
+    </div>
+    <div class="duo">
+      <div class="panel dark">
+        <div class="plabel">Fundo escuro</div>
+        <div class="lk"><div class="orb o-master"></div><div class="wmb"><div class="wm" style="font-family:'Syne';font-weight:800">MyDose</div><div class="tag" style="font-family:'Syne'">Take Back Control</div></div><span class="ft">Syne</span></div>
+        <div class="lk"><div class="orb o-master"></div><div class="wmb"><div class="wm" style="font-family:'Space Grotesk';font-weight:700">MyDose</div><div class="tag" style="font-family:'Space Grotesk'">Take Back Control</div></div><span class="ft">Space Grotesk</span></div>
+        <div class="lk"><div class="orb o-master"></div><div class="wmb"><div class="wm" style="font-family:'Outfit';font-weight:600">MyDose</div><div class="tag" style="font-family:'Outfit'">Take Back Control</div></div><span class="ft">Outfit</span></div>
+        <div class="lk"><div class="orb o-master"></div><div class="wmb"><div class="wm" style="font-family:'Lexend';font-weight:600">MyDose</div><div class="tag" style="font-family:'Lexend'">Take Back Control</div></div><span class="ft">Lexend</span></div>
+        <div class="lk"><div class="orb o-master"></div><div class="wmb"><div class="wm" style="font-family:'Figtree';font-weight:700">MyDose</div><div class="tag" style="font-family:'Figtree'">Take Back Control</div></div><span class="ft">Figtree</span></div>
+        <div class="lk"><div class="orb o-master"></div><div class="wmb"><div class="wm" style="font-family:'Clash Display','Syne';font-weight:600">MyDose</div><div class="tag" style="font-family:'Clash Display','Syne'">Take Back Control</div></div><span class="ft">Clash</span></div>
+      </div>
+      <div class="panel lite">
+        <div class="plabel">Fundo branco</div>
+        <div class="lk"><div class="orb o-master"></div><div class="wmb"><div class="wm" style="font-family:'Syne';font-weight:800">MyDose</div><div class="tag" style="font-family:'Syne'">Take Back Control</div></div><span class="ft">Syne</span></div>
+        <div class="lk"><div class="orb o-master"></div><div class="wmb"><div class="wm" style="font-family:'Space Grotesk';font-weight:700">MyDose</div><div class="tag" style="font-family:'Space Grotesk'">Take Back Control</div></div><span class="ft">Space Grotesk</span></div>
+        <div class="lk"><div class="orb o-master"></div><div class="wmb"><div class="wm" style="font-family:'Outfit';font-weight:600">MyDose</div><div class="tag" style="font-family:'Outfit'">Take Back Control</div></div><span class="ft">Outfit</span></div>
+        <div class="lk"><div class="orb o-master"></div><div class="wmb"><div class="wm" style="font-family:'Lexend';font-weight:600">MyDose</div><div class="tag" style="font-family:'Lexend'">Take Back Control</div></div><span class="ft">Lexend</span></div>
+        <div class="lk"><div class="orb o-master"></div><div class="wmb"><div class="wm" style="font-family:'Figtree';font-weight:700">MyDose</div><div class="tag" style="font-family:'Figtree'">Take Back Control</div></div><span class="ft">Figtree</span></div>
+        <div class="lk"><div class="orb o-master"></div><div class="wmb"><div class="wm" style="font-family:'Clash Display','Syne';font-weight:600">MyDose</div><div class="tag" style="font-family:'Clash Display','Syne'">Take Back Control</div></div><span class="ft">Clash</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== MENTAL HEALTH ====== -->
+<div class="block">
+  <div class="wrap">
+    <div class="bhead">
+      <div class="orb o-mind bo"></div>
+      <div><div class="bt">MyDose <span style="color:#A78BFA">Mental Health</span></div><div class="hx">#C9B6FF → #A78BFA → #6D28D9 · lavanda → violeta</div></div>
+    </div>
+    <div class="duo">
+      <div class="panel dark">
+        <div class="plabel">Fundo escuro</div>
+        <div class="lk"><div class="orb o-mind"></div><div class="wmb"><div class="wm" style="font-family:'Syne';font-weight:800">MyDose</div><div class="sub" style="font-family:'Syne'">Mental Health</div></div><span class="ft">Syne</span></div>
+        <div class="lk"><div class="orb o-mind"></div><div class="wmb"><div class="wm" style="font-family:'Space Grotesk';font-weight:700">MyDose</div><div class="sub" style="font-family:'Space Grotesk'">Mental Health</div></div><span class="ft">Space Grotesk</span></div>
+        <div class="lk"><div class="orb o-mind"></div><div class="wmb"><div class="wm" style="font-family:'Outfit';font-weight:600">MyDose</div><div class="sub" style="font-family:'Outfit'">Mental Health</div></div><span class="ft">Outfit</span></div>
+        <div class="lk"><div class="orb o-mind"></div><div class="wmb"><div class="wm" style="font-family:'Lexend';font-weight:600">MyDose</div><div class="sub" style="font-family:'Lexend'">Mental Health</div></div><span class="ft">Lexend</span></div>
+        <div class="lk"><div class="orb o-mind"></div><div class="wmb"><div class="wm" style="font-family:'Figtree';font-weight:700">MyDose</div><div class="sub" style="font-family:'Figtree'">Mental Health</div></div><span class="ft">Figtree</span></div>
+        <div class="lk"><div class="orb o-mind"></div><div class="wmb"><div class="wm" style="font-family:'Clash Display','Syne';font-weight:600">MyDose</div><div class="sub" style="font-family:'Clash Display','Syne'">Mental Health</div></div><span class="ft">Clash</span></div>
+      </div>
+      <div class="panel lite">
+        <div class="plabel">Fundo branco</div>
+        <div class="lk"><div class="orb o-mind"></div><div class="wmb"><div class="wm" style="font-family:'Syne';font-weight:800">MyDose</div><div class="sub" style="font-family:'Syne'">Mental Health</div></div><span class="ft">Syne</span></div>
+        <div class="lk"><div class="orb o-mind"></div><div class="wmb"><div class="wm" style="font-family:'Space Grotesk';font-weight:700">MyDose</div><div class="sub" style="font-family:'Space Grotesk'">Mental Health</div></div><span class="ft">Space Grotesk</span></div>
+        <div class="lk"><div class="orb o-mind"></div><div class="wmb"><div class="wm" style="font-family:'Outfit';font-weight:600">MyDose</div><div class="sub" style="font-family:'Outfit'">Mental Health</div></div><span class="ft">Outfit</span></div>
+        <div class="lk"><div class="orb o-mind"></div><div class="wmb"><div class="wm" style="font-family:'Lexend';font-weight:600">MyDose</div><div class="sub" style="font-family:'Lexend'">Mental Health</div></div><span class="ft">Lexend</span></div>
+        <div class="lk"><div class="orb o-mind"></div><div class="wmb"><div class="wm" style="font-family:'Figtree';font-weight:700">MyDose</div><div class="sub" style="font-family:'Figtree'">Mental Health</div></div><span class="ft">Figtree</span></div>
+        <div class="lk"><div class="orb o-mind"></div><div class="wmb"><div class="wm" style="font-family:'Clash Display','Syne';font-weight:600">MyDose</div><div class="sub" style="font-family:'Clash Display','Syne'">Mental Health</div></div><span class="ft">Clash</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== PHYSICAL HEALTH ====== -->
+<div class="block">
+  <div class="wrap">
+    <div class="bhead">
+      <div class="orb o-phys bo"></div>
+      <div><div class="bt">MyDose <span style="color:#4ADE80">Physical Health</span></div><div class="hx">#9BF6B8 → #4ADE80 → #15803D · verde</div></div>
+    </div>
+    <div class="duo">
+      <div class="panel dark">
+        <div class="plabel">Fundo escuro</div>
+        <div class="lk"><div class="orb o-phys"></div><div class="wmb"><div class="wm" style="font-family:'Syne';font-weight:800">MyDose</div><div class="sub" style="font-family:'Syne'">Physical Health</div></div><span class="ft">Syne</span></div>
+        <div class="lk"><div class="orb o-phys"></div><div class="wmb"><div class="wm" style="font-family:'Space Grotesk';font-weight:700">MyDose</div><div class="sub" style="font-family:'Space Grotesk'">Physical Health</div></div><span class="ft">Space Grotesk</span></div>
+        <div class="lk"><div class="orb o-phys"></div><div class="wmb"><div class="wm" style="font-family:'Outfit';font-weight:600">MyDose</div><div class="sub" style="font-family:'Outfit'">Physical Health</div></div><span class="ft">Outfit</span></div>
+        <div class="lk"><div class="orb o-phys"></div><div class="wmb"><div class="wm" style="font-family:'Lexend';font-weight:600">MyDose</div><div class="sub" style="font-family:'Lexend'">Physical Health</div></div><span class="ft">Lexend</span></div>
+        <div class="lk"><div class="orb o-phys"></div><div class="wmb"><div class="wm" style="font-family:'Figtree';font-weight:700">MyDose</div><div class="sub" style="font-family:'Figtree'">Physical Health</div></div><span class="ft">Figtree</span></div>
+        <div class="lk"><div class="orb o-phys"></div><div class="wmb"><div class="wm" style="font-family:'Clash Display','Syne';font-weight:600">MyDose</div><div class="sub" style="font-family:'Clash Display','Syne'">Physical Health</div></div><span class="ft">Clash</span></div>
+      </div>
+      <div class="panel lite">
+        <div class="plabel">Fundo branco</div>
+        <div class="lk"><div class="orb o-phys"></div><div class="wmb"><div class="wm" style="font-family:'Syne';font-weight:800">MyDose</div><div class="sub" style="font-family:'Syne'">Physical Health</div></div><span class="ft">Syne</span></div>
+        <div class="lk"><div class="orb o-phys"></div><div class="wmb"><div class="wm" style="font-family:'Space Grotesk';font-weight:700">MyDose</div><div class="sub" style="font-family:'Space Grotesk'">Physical Health</div></div><span class="ft">Space Grotesk</span></div>
+        <div class="lk"><div class="orb o-phys"></div><div class="wmb"><div class="wm" style="font-family:'Outfit';font-weight:600">MyDose</div><div class="sub" style="font-family:'Outfit'">Physical Health</div></div><span class="ft">Outfit</span></div>
+        <div class="lk"><div class="orb o-phys"></div><div class="wmb"><div class="wm" style="font-family:'Lexend';font-weight:600">MyDose</div><div class="sub" style="font-family:'Lexend'">Physical Health</div></div><span class="ft">Lexend</span></div>
+        <div class="lk"><div class="orb o-phys"></div><div class="wmb"><div class="wm" style="font-family:'Figtree';font-weight:700">MyDose</div><div class="sub" style="font-family:'Figtree'">Physical Health</div></div><span class="ft">Figtree</span></div>
+        <div class="lk"><div class="orb o-phys"></div><div class="wmb"><div class="wm" style="font-family:'Clash Display','Syne';font-weight:600">MyDose</div><div class="sub" style="font-family:'Clash Display','Syne'">Physical Health</div></div><span class="ft">Clash</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== CLINICS ====== -->
+<div class="block">
+  <div class="wrap">
+    <div class="bhead">
+      <div class="orb o-clin bo"></div>
+      <div><div class="bt">MyDose <span style="color:#5AB8FF">Clinics</span></div><div class="hx">#9AD4FF → #5AB8FF → #2D6BFF · azul</div></div>
+    </div>
+    <div class="duo">
+      <div class="panel dark">
+        <div class="plabel">Fundo escuro</div>
+        <div class="lk"><div class="orb o-clin"></div><div class="wmb"><div class="wm" style="font-family:'Syne';font-weight:800">MyDose</div><div class="sub" style="font-family:'Syne'">Clinics</div></div><span class="ft">Syne</span></div>
+        <div class="lk"><div class="orb o-clin"></div><div class="wmb"><div class="wm" style="font-family:'Space Grotesk';font-weight:700">MyDose</div><div class="sub" style="font-family:'Space Grotesk'">Clinics</div></div><span class="ft">Space Grotesk</span></div>
+        <div class="lk"><div class="orb o-clin"></div><div class="wmb"><div class="wm" style="font-family:'Outfit';font-weight:600">MyDose</div><div class="sub" style="font-family:'Outfit'">Clinics</div></div><span class="ft">Outfit</span></div>
+        <div class="lk"><div class="orb o-clin"></div><div class="wmb"><div class="wm" style="font-family:'Lexend';font-weight:600">MyDose</div><div class="sub" style="font-family:'Lexend'">Clinics</div></div><span class="ft">Lexend</span></div>
+        <div class="lk"><div class="orb o-clin"></div><div class="wmb"><div class="wm" style="font-family:'Figtree';font-weight:700">MyDose</div><div class="sub" style="font-family:'Figtree'">Clinics</div></div><span class="ft">Figtree</span></div>
+        <div class="lk"><div class="orb o-clin"></div><div class="wmb"><div class="wm" style="font-family:'Clash Display','Syne';font-weight:600">MyDose</div><div class="sub" style="font-family:'Clash Display','Syne'">Clinics</div></div><span class="ft">Clash</span></div>
+      </div>
+      <div class="panel lite">
+        <div class="plabel">Fundo branco</div>
+        <div class="lk"><div class="orb o-clin"></div><div class="wmb"><div class="wm" style="font-family:'Syne';font-weight:800">MyDose</div><div class="sub" style="font-family:'Syne'">Clinics</div></div><span class="ft">Syne</span></div>
+        <div class="lk"><div class="orb o-clin"></div><div class="wmb"><div class="wm" style="font-family:'Space Grotesk';font-weight:700">MyDose</div><div class="sub" style="font-family:'Space Grotesk'">Clinics</div></div><span class="ft">Space Grotesk</span></div>
+        <div class="lk"><div class="orb o-clin"></div><div class="wmb"><div class="wm" style="font-family:'Outfit';font-weight:600">MyDose</div><div class="sub" style="font-family:'Outfit'">Clinics</div></div><span class="ft">Outfit</span></div>
+        <div class="lk"><div class="orb o-clin"></div><div class="wmb"><div class="wm" style="font-family:'Lexend';font-weight:600">MyDose</div><div class="sub" style="font-family:'Lexend'">Clinics</div></div><span class="ft">Lexend</span></div>
+        <div class="lk"><div class="orb o-clin"></div><div class="wmb"><div class="wm" style="font-family:'Figtree';font-weight:700">MyDose</div><div class="sub" style="font-family:'Figtree'">Clinics</div></div><span class="ft">Figtree</span></div>
+        <div class="lk"><div class="orb o-clin"></div><div class="wmb"><div class="wm" style="font-family:'Clash Display','Syne';font-weight:600">MyDose</div><div class="sub" style="font-family:'Clash Display','Syne'">Clinics</div></div><span class="ft">Clash</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="orb o-master o"></div>
+    <div class="pill">MyDose · Sublogos × Fontes v6 · rosa → roxo</div>
+    <p style="margin-top:16px;font-size:13px">4 sublogos × 6 fontes × fundo claro/escuro — pronto pra aprovar fonte + cor</p>
+  </div>
+</footer>
+
+</body>
+</html>
