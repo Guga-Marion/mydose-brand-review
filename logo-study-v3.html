@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>myDose — Estudo de Logo v3 · Crafted</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&family=Sora:wght@300..700&family=Space+Grotesk:wght@400..700&family=Outfit:wght@300..700&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Plus+Jakarta+Sans:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0D0D14; --ink2:#1A1A26; --paper:#F6F4EF; --paper2:#FBFAF7; --line:#E4E0D6;
+    --muted:#8A8678; --muted2:#B8B4A8;
+    --violet:#6C3EFF; --violet-l:#A06CFF; --pink:#FF3D6E; --coral:#FF8A3D; --amber:#FFB627; --cream:#FFEAD6;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:'Plus Jakarta Sans',sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+  .display{font-family:'Syne',sans-serif;font-weight:800;letter-spacing:-.03em;line-height:.98}
+  .mono{font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.16em;font-size:11px;color:var(--muted)}
+  .kick{font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.22em;font-size:11px;color:var(--coral)}
+  a{color:inherit}
+
+  section{padding:84px 0;border-bottom:1px solid var(--line)}
+  .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:46px;flex-wrap:wrap}
+  .sec-no{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--muted2);letter-spacing:.1em}
+  .sec-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(26px,4vw,44px);letter-spacing:-.03em}
+  .sec-sub{color:var(--muted);font-size:15px;max-width:580px;margin-top:6px}
+
+  /* ===== orb (vector, crafted) ===== */
+  .orb{display:block}
+  .orb-shadow{filter:drop-shadow(0 22px 30px rgba(108,62,255,.28))}
+
+  /* HERO */
+  .hero{background:var(--ink);color:var(--paper);padding:104px 0 96px;position:relative;overflow:hidden;border:none}
+  .hero .wrap{position:relative;z-index:2}
+  .hero .lock{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+  .hero h1{font-size:clamp(40px,8vw,96px);line-height:.92;display:flex;align-items:center;gap:.04em}
+  .hero .lead{max-width:600px;color:#C9C6BE;font-size:18px;margin-top:30px}
+  .hero .meta{display:flex;gap:40px;margin-top:50px;flex-wrap:wrap}
+  .hero .meta .mono{color:#7C7A72}
+  .hero .meta b{display:block;font-family:'Syne';font-weight:700;font-size:20px;color:var(--paper);margin-top:4px;letter-spacing:-.01em}
+  .hero .grain{position:absolute;inset:0;opacity:.5;background:
+     radial-gradient(420px 420px at 84% -10%, rgba(255,138,61,.20), transparent 60%),
+     radial-gradient(380px 380px at 10% 120%, rgba(108,62,255,.26), transparent 60%);}
+
+  /* wordmark lockup (inline orb as the "o") */
+  .wm{display:inline-flex;align-items:center;line-height:1;letter-spacing:-.03em;font-weight:800}
+  .wm .my{font-weight:500;opacity:.92}
+  .wm .orb-inline{display:inline-block;vertical-align:middle}
+
+  /* MARK section */
+  .mark-stage{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
+  @media(max-width:860px){.mark-stage{grid-template-columns:1fr}}
+  .stage{border:1px solid var(--line);border-radius:22px;min-height:340px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+  .stage.light{background:var(--paper2)}
+  .stage.dark{background:var(--ink)}
+  .stage .tag{position:absolute;top:16px;left:18px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted2)}
+  .stage.dark .tag{color:#6b6878}
+
+  /* construction */
+  .constr{border:1px solid var(--line);border-radius:22px;background:var(--paper2);padding:34px;display:flex;gap:34px;align-items:center;flex-wrap:wrap;margin-top:24px}
+  .constr .cap{flex:1;min-width:260px}
+  .constr h3{font-family:'Syne';font-weight:800;font-size:22px;letter-spacing:-.02em;margin-bottom:8px}
+  .constr p{color:var(--ink2);font-size:14.5px}
+  .constr ul{list-style:none;margin-top:14px;display:grid;gap:8px}
+  .constr li{font-size:13.5px;color:var(--muted);display:flex;gap:10px}
+  .constr li b{color:var(--ink);font-weight:600}
+  .constr li::before{content:"→";color:var(--coral);font-family:'JetBrains Mono'}
+
+  /* symbol grid */
+  .grid{display:grid;gap:22px}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g4{grid-template-columns:repeat(4,1fr)}
+  @media(max-width:860px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.g3,.g4{grid-template-columns:1fr}}
+  .card{background:var(--paper2);border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:210px;position:relative;transition:.25s}
+  .card:hover{box-shadow:0 18px 50px -22px rgba(13,13,20,.26);transform:translateY(-3px)}
+  .card .tag{position:absolute;top:13px;left:14px;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted2)}
+  .card .nm{margin-top:20px;font-family:'Syne';font-weight:700;font-size:14px;text-align:center}
+  .card .ds{font-size:12px;color:var(--muted);text-align:center;margin-top:3px;max-width:210px}
+  .card.dark{background:var(--ink);border-color:#23232f}
+  .card.dark .nm{color:var(--paper)} .card.dark .ds{color:#8A8678}
+
+  /* wordmark systems */
+  .fsys{border:1px solid var(--line);border-radius:20px;padding:34px;background:var(--paper2);display:flex;flex-direction:column;gap:18px}
+  .fsys .lbl{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px}
+  .fsys .lbl .fn{font-family:'Syne';font-weight:800;font-size:18px;letter-spacing:-.01em}
+  .fsys .lbl .sp{font-family:'JetBrains Mono';font-size:11px;color:var(--muted)}
+  .fsys .show{padding:18px 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:22px}
+  .fsys .desc{font-size:13.5px;color:var(--muted)}
+
+  /* color */
+  .pal{display:grid;grid-template-columns:repeat(6,1fr);border-radius:16px;overflow:hidden;border:1px solid var(--line)}
+  .pal .sw{height:150px;padding:14px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff}
+  .pal .sw b{font-family:'Syne';font-weight:700;font-size:13px}
+  .pal .sw span{font-family:'JetBrains Mono',monospace;font-size:10px;opacity:.85;margin-top:2px}
+  @media(max-width:860px){.pal{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:520px){.pal{grid-template-columns:repeat(2,1fr)}}
+  .ramp{height:60px;border-radius:14px;margin-top:18px;border:1px solid var(--line);
+     background:linear-gradient(100deg,#6C3EFF 0%,#A06CFF 24%,#FF3D6E 56%,#FF6A4D 78%,#FF8A3D 100%)}
+
+  /* app icons */
+  .icons{display:grid;grid-template-columns:repeat(5,1fr);gap:22px}
+  @media(max-width:860px){.icons{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:520px){.icons{grid-template-columns:repeat(2,1fr)}}
+  .icw{position:relative;padding-bottom:24px}
+  .ic{aspect-ratio:1;border-radius:24%;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
+     box-shadow:inset 0 1.5px 0 rgba(255,255,255,.35),0 14px 30px -14px rgba(13,13,20,.4)}
+  .icw .lab{position:absolute;bottom:0;left:0;right:0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+
+  /* do / dont */
+  .dd{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  @media(max-width:860px){.dd{grid-template-columns:1fr}}
+  .ddc{border-radius:18px;padding:26px;border:1px solid var(--line);background:var(--paper2)}
+  .ddc .h{display:flex;align-items:center;gap:10px;font-family:'Syne';font-weight:800;font-size:16px;margin-bottom:16px}
+  .ddc.no .h{color:#C0392B} .ddc.yes .h{color:#15803D}
+  .ddc .row{display:flex;gap:16px;align-items:center;padding:12px 0;border-top:1px dashed var(--line);font-size:13.5px;color:var(--ink2)}
+  .ddc .row:first-of-type{border-top:none}
+  .ddc .chip{width:60px;height:60px;border-radius:14px;flex:none;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--line);overflow:hidden}
+
+  footer{padding:56px 0 80px;text-align:center;color:var(--muted)}
+  .pill{display:inline-block;border:1px solid var(--line);border-radius:100px;padding:7px 16px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<!-- ====== VECTOR DEFS (gradientes definidos com stops — feito como no Illustrator) ====== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <radialGradient id="orbCore" cx="37%" cy="31%" r="78%">
+    <stop offset="0%"  stop-color="#FFEAD6"/>
+    <stop offset="16%" stop-color="#FFC39C"/>
+    <stop offset="37%" stop-color="#FF6E96"/>
+    <stop offset="63%" stop-color="#B85FF0"/>
+    <stop offset="100%" stop-color="#6C3EFF"/>
+  </radialGradient>
+  <radialGradient id="orbCoral" cx="83%" cy="85%" r="56%">
+    <stop offset="0%"  stop-color="#FF8A3D" stop-opacity="1"/>
+    <stop offset="42%" stop-color="#FF6A4D" stop-opacity=".5"/>
+    <stop offset="100%" stop-color="#FF6A4D" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="orbDeep" cx="14%" cy="10%" r="46%">
+    <stop offset="0%"  stop-color="#5A2BD6" stop-opacity=".55"/>
+    <stop offset="100%" stop-color="#5A2BD6" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="orbHi" cx="50%" cy="50%" r="50%">
+    <stop offset="0%"  stop-color="#FFFFFF" stop-opacity=".9"/>
+    <stop offset="55%" stop-color="#FFFFFF" stop-opacity=".25"/>
+    <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="orbRim" x1="20%" y1="0%" x2="85%" y2="100%">
+    <stop offset="0%"  stop-color="#FFFFFF" stop-opacity=".55"/>
+    <stop offset="48%" stop-color="#FFFFFF" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#FFC07A" stop-opacity=".7"/>
+  </linearGradient>
+  <!-- symbol: the dose-sphere, crafted -->
+  <symbol id="orbSym" viewBox="0 0 120 120">
+    <circle cx="60" cy="60" r="58" fill="url(#orbCore)"/>
+    <circle cx="60" cy="60" r="58" fill="url(#orbCoral)"/>
+    <circle cx="60" cy="60" r="58" fill="url(#orbDeep)"/>
+    <ellipse cx="45" cy="38" rx="20" ry="12.5" fill="url(#orbHi)" transform="rotate(-24 45 38)"/>
+    <circle cx="60" cy="60" r="57.2" fill="none" stroke="url(#orbRim)" stroke-width="1.4"/>
+  </symbol>
+  <!-- monogram backdrop gradient -->
+  <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#6C3EFF"/><stop offset="50%" stop-color="#FF3D6E"/><stop offset="100%" stop-color="#FF8A3D"/>
+  </linearGradient>
+</defs></svg>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="grain"></div>
+  <div class="wrap">
+    <div class="kick" style="color:var(--coral)">myDose · Brand · Logo Study v3 · Crafted Edition</div>
+    <h1 class="display" style="margin-top:22px">
+      <span class="wm" style="font-size:1em">
+        <span class="my" style="color:#C9C6BE">my</span><span style="color:var(--paper)">D</span><svg class="orb-inline orb-shadow" width="0.86em" height="0.86em" style="margin:0 .01em"><use href="#orbSym"/></svg><span style="color:var(--paper)">se</span>
+      </span>
+    </h1>
+    <p class="lead">A esfera-dose continua o coração da marca — mas reconstruída como <b style="color:#fff">vetor de verdade</b>: gradiente com stops definidos, brilho especular nítido, rim light e borda crisp. A mesma cor do orb, agora com cara de Illustrator, não de gerador de imagem.</p>
+    <div class="meta">
+      <div><span class="mono">Símbolo</span><b>Esfera-dose v3</b></div>
+      <div><span class="mono">Execução</span><b>100% vetor / SVG</b></div>
+      <div><span class="mono">Wordmarks</span><b>3 sistemas</b></div>
+      <div><span class="mono">Cor</span><b>Orb gradient</b></div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ 01 · THE MARK ============ -->
+<section id="mark">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">01</span>
+      <div><div class="sec-title">A marca primária</div>
+      <div class="sec-sub">A esfera-dose com volume real: luz vindo do canto superior-esquerdo, núcleo quente, sombra violeta e um respingo coral embaixo. Tudo controlado por stops — escala de favicon a outdoor sem perder nitidez.</div></div>
+    </div>
+    <div class="mark-stage">
+      <div class="stage light"><span class="tag">Light · primário</span>
+        <svg class="orb orb-shadow" width="200" height="200"><use href="#orbSym"/></svg>
+      </div>
+      <div class="stage dark"><span class="tag">Dark · invertido</span>
+        <svg class="orb" width="160" height="160" style="filter:drop-shadow(0 18px 40px rgba(255,61,110,.4))"><use href="#orbSym"/></svg>
+      </div>
+    </div>
+
+    <!-- construction -->
+    <div class="constr">
+      <svg width="240" height="240" viewBox="0 0 240 240" style="flex:none">
+        <rect x="20" y="20" width="200" height="200" rx="8" fill="none" stroke="#E4E0D6"/>
+        <line x1="120" y1="10" x2="120" y2="230" stroke="#E4E0D6"/>
+        <line x1="10" y1="120" x2="230" y2="120" stroke="#E4E0D6"/>
+        <circle cx="120" cy="120" r="100" fill="none" stroke="#D9D4C8" stroke-dasharray="3 4"/>
+        <circle cx="120" cy="120" r="74" fill="none" stroke="#D9D4C8" stroke-dasharray="3 4"/>
+        <line x1="120" y1="120" x2="190" y2="120" stroke="#FF8A3D" stroke-width="1.4"/>
+        <text x="148" y="114" font-family="JetBrains Mono" font-size="11" fill="#8A8678">r</text>
+        <g transform="translate(60,60)"><svg width="120" height="120"><use href="#orbSym"/></svg></g>
+        <ellipse cx="105" cy="98" rx="20" ry="12.5" fill="none" stroke="#FF3D6E" stroke-width="1" stroke-dasharray="2 3" transform="rotate(-24 105 98)"/>
+      </svg>
+      <div class="cap">
+        <h3>Construída, não gerada</h3>
+        <p>Cada elemento tem uma razão geométrica — o oposto de uma esfera borrada saída de prompt.</p>
+        <ul>
+          <li><b>Highlight especular</b> a 1/3 do topo-esquerdo (fonte de luz única).</li>
+          <li><b>Núcleo quente</b> creme→rosa controlado por 5 stops de gradiente.</li>
+          <li><b>Sombra própria violeta</b> na borda oposta à luz.</li>
+          <li><b>Rim light coral</b> de baixo — dá volume e amarra a paleta.</li>
+          <li><b>Borda crisp</b> de 1px — o que diferencia vetor de blur de IA.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 · SYMBOL EXPLORATIONS ============ -->
+<section id="symbols">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">02</span>
+      <div><div class="sec-title">Explorações de símbolo</div>
+      <div class="sec-sub">Mesma cor, mesma esfera — direções vetoriais que adicionam intenção: dose, órbita (a camada de IA), cápsula e monograma.</div></div>
+    </div>
+    <div class="grid g4">
+
+      <div class="card"><span class="tag">A · esfera-dose</span>
+        <svg class="orb orb-shadow" width="100" height="100"><use href="#orbSym"/></svg>
+        <div class="nm">Esfera-dose</div><div class="ds">A marca-mãe, limpa e dimensional.</div>
+      </div>
+
+      <div class="card"><span class="tag">B · órbita / IA</span>
+        <svg width="120" height="100" viewBox="0 0 120 100">
+          <ellipse cx="60" cy="50" rx="56" ry="22" fill="none" stroke="#A06CFF" stroke-width="2.4" transform="rotate(-18 60 50)"/>
+          <svg x="32" y="22" width="56" height="56"><use href="#orbSym"/></svg>
+          <circle cx="106" cy="34" r="4.2" fill="#FF8A3D"/>
+        </svg>
+        <div class="nm">Dose em órbita</div><div class="ds">A esfera + o anel da inteligência ao redor.</div>
+      </div>
+
+      <div class="card"><span class="tag">C · cápsula</span>
+        <svg width="110" height="100" viewBox="0 0 110 100">
+          <defs><clipPath id="cap1"><rect x="20" y="22" width="70" height="56" rx="28"/></clipPath></defs>
+          <g clip-path="url(#cap1)">
+            <rect x="20" y="22" width="70" height="56" fill="url(#brandGrad)"/>
+            <rect x="20" y="22" width="35" height="56" fill="#FBFAF7"/>
+            <rect x="20" y="22" width="35" height="56" fill="url(#orbCore)" opacity=".18"/>
+          </g>
+          <rect x="20" y="22" width="70" height="56" rx="28" fill="none" stroke="#E4E0D6"/>
+          <circle cx="68" cy="50" r="6" fill="#fff" opacity=".55"/>
+        </svg>
+        <div class="nm">Cápsula-dose</div><div class="ds">Leitura farma direta, metade luz / metade cor.</div>
+      </div>
+
+      <div class="card"><span class="tag">D · monograma m</span>
+        <svg width="100" height="100" viewBox="0 0 100 100">
+          <rect x="6" y="6" width="88" height="88" rx="24" fill="url(#brandGrad)"/>
+          <rect x="6" y="6" width="88" height="88" rx="24" fill="url(#orbHi)" opacity=".5"/>
+          <path d="M28 70V42c0-7 5.5-12 12.5-12S53 35 53 42m0 28V42c0-7 5.5-12 12.5-12S78 35 78 42v28"
+                fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+        </svg>
+        <div class="nm">Monograma “m”</div><div class="ds">Para ícone/avatar, com a cor do orb chapada.</div>
+      </div>
+
+      <div class="card"><span class="tag">E · gota / dose líquida</span>
+        <svg width="90" height="110" viewBox="0 0 90 110">
+          <path d="M45 8 C45 8 78 50 78 72 a33 33 0 0 1 -66 0 C12 50 45 8 45 8 Z" fill="url(#orbCore)"/>
+          <path d="M45 8 C45 8 78 50 78 72 a33 33 0 0 1 -66 0 C12 50 45 8 45 8 Z" fill="url(#orbCoral)"/>
+          <path d="M45 8 C45 8 78 50 78 72 a33 33 0 0 1 -66 0 C12 50 45 8 45 8 Z" fill="none" stroke="url(#orbRim)" stroke-width="1.4"/>
+          <ellipse cx="34" cy="58" rx="9" ry="14" fill="#fff" opacity=".4" transform="rotate(-18 34 58)"/>
+        </svg>
+        <div class="nm">Gota-dose</div><div class="ds">A dose em forma líquida, mesmo material da esfera.</div>
+      </div>
+
+      <div class="card"><span class="tag">F · esfera + arco</span>
+        <svg width="110" height="100" viewBox="0 0 110 100">
+          <path d="M16 50 a39 39 0 0 1 78 0" fill="none" stroke="url(#brandGrad)" stroke-width="6" stroke-linecap="round"/>
+          <svg x="30" y="34" width="50" height="50"><use href="#orbSym"/></svg>
+        </svg>
+        <div class="nm">Dose nascente</div><div class="ds">Arco de progresso — adesão / “sua dose do dia”.</div>
+      </div>
+
+      <div class="card dark"><span class="tag">A · no escuro</span>
+        <svg class="orb" width="100" height="100"><use href="#orbSym"/></svg>
+        <div class="nm">Esfera no dark</div><div class="ds">Glow natural sobre fundo ink.</div>
+      </div>
+
+      <div class="card"><span class="tag">G · favicon 16px</span>
+        <svg class="orb" width="56" height="56"><use href="#orbSym"/></svg>
+        <div class="nm">Mínimo legível</div><div class="ds">Sobrevive a 16px — brilho e borda seguram a forma.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 · WORDMARK SYSTEMS ============ -->
+<section id="wordmark">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">03</span>
+      <div><div class="sec-title">Wordmark & lockups</div>
+      <div class="sec-sub">A esfera entra no lugar do “o” de Dose. “my” em peso leve, “Dose” em peso forte — três sistemas tipográficos pra fechar a direção.</div></div>
+    </div>
+
+    <div class="grid" style="gap:22px">
+
+      <div class="fsys">
+        <div class="lbl"><span class="fn">Sistema 1 · Syne</span><span class="sp">Display 800 / texto Plus Jakarta — atual</span></div>
+        <div class="show">
+          <span class="wm" style="font-family:'Syne';font-size:64px">
+            <span class="my">my</span>D<svg class="orb-inline" width="0.82em" height="0.82em" style="margin:0 .005em"><use href="#orbSym"/></svg>se
+          </span>
+          <div class="desc">Personalidade alta, geométrica e contemporânea. É a cara que a marca já tem — mantém continuidade.</div>
+        </div>
+      </div>
+
+      <div class="fsys">
+        <div class="lbl"><span class="fn">Sistema 2 · Space Grotesk</span><span class="sp">Mono-influenciada — tech / clínico</span></div>
+        <div class="show">
+          <span class="wm" style="font-family:'Space Grotesk';font-weight:700;font-size:64px">
+            <span class="my" style="font-weight:400">my</span>D<svg class="orb-inline" width="0.8em" height="0.8em" style="margin:0 .01em"><use href="#orbSym"/></svg>se
+          </span>
+          <div class="desc">Mais sóbria e “de produto”. Passa precisão — bom se o tom for saúde-tech sério.</div>
+        </div>
+      </div>
+
+      <div class="fsys">
+        <div class="lbl"><span class="fn">Sistema 3 · Bricolage Grotesque</span><span class="sp">Caráter editorial — humano</span></div>
+        <div class="show">
+          <span class="wm" style="font-family:'Bricolage Grotesque';font-weight:800;font-size:64px">
+            <span class="my" style="font-weight:500">my</span>D<svg class="orb-inline" width="0.82em" height="0.82em" style="margin:0 .01em"><use href="#orbSym"/></svg>se
+          </span>
+          <div class="desc">Quente e próxima, com leve charme tipográfico. Boa pra um tom mais wellness/lifestyle.</div>
+        </div>
+      </div>
+
+      <!-- horizontal lockup with mark + name -->
+      <div class="fsys">
+        <div class="lbl"><span class="fn">Lockup horizontal · símbolo + nome</span><span class="sp">assinatura padrão</span></div>
+        <div class="show" style="flex-direction:row;align-items:center;gap:20px;flex-wrap:wrap">
+          <svg class="orb orb-shadow" width="64" height="64"><use href="#orbSym"/></svg>
+          <span class="wm" style="font-family:'Syne';font-size:46px"><span class="my">my</span>Dose</span>
+          <span style="width:1px;height:46px;background:var(--line)"></span>
+          <span class="mono" style="text-transform:none;letter-spacing:.02em;font-size:13px;color:var(--muted)">your dose, intelligently dosed</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 · COLOR ============ -->
+<section id="color">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">04</span>
+      <div><div class="sec-title">A cor do orb, decomposta</div>
+      <div class="sec-sub">O gradiente da esfera, agora com hex fixos e ordem definida — do violeta profundo (sombra) ao coral (rim). É o que torna reprodutível em print, app e vetor.</div></div>
+    </div>
+    <div class="pal">
+      <div class="sw" style="background:#6C3EFF"><b>Violet Deep</b><span>#6C3EFF</span></div>
+      <div class="sw" style="background:#A06CFF"><b>Violet</b><span>#A06CFF</span></div>
+      <div class="sw" style="background:#FF3D6E"><b>Dose Pink</b><span>#FF3D6E</span></div>
+      <div class="sw" style="background:#FF6A4D"><b>Coral</b><span>#FF6A4D</span></div>
+      <div class="sw" style="background:#FF8A3D"><b>Orange</b><span>#FF8A3D</span></div>
+      <div class="sw" style="background:#FFC07A;color:#5a3a10"><b>Peach Hi</b><span>#FFC07A</span></div>
+    </div>
+    <div class="ramp"></div>
+    <p class="sec-sub" style="margin-top:14px">Neutros do sistema: ink <b>#0D0D14</b> · paper <b>#F6F4EF</b> · linha <b>#E4E0D6</b> · muted <b>#8A8678</b>.</p>
+  </div>
+</section>
+
+<!-- ============ 05 · APP ICONS ============ -->
+<section id="icons">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">05</span>
+      <div><div class="sec-title">Ícone de app</div>
+      <div class="sec-sub">A esfera centrada respira melhor que o monograma em telas pequenas — superfície limpa, sem texto.</div></div>
+    </div>
+    <div class="icons">
+      <div class="icw"><div class="ic" style="background:#0D0D14"><svg class="orb" width="62%" height="62%"><use href="#orbSym"/></svg></div><div class="lab">ink</div></div>
+      <div class="icw"><div class="ic" style="background:#F6F4EF"><svg class="orb" width="62%" height="62%"><use href="#orbSym"/></svg></div><div class="lab">paper</div></div>
+      <div class="icw"><div class="ic" style="background:linear-gradient(140deg,#1A1A26,#0D0D14)"><svg class="orb" width="58%" height="58%"><use href="#orbSym"/></svg></div><div class="lab">graphite</div></div>
+      <div class="icw"><div class="ic" style="background:linear-gradient(140deg,#6C3EFF,#FF3D6E,#FF8A3D)"><span class="wm" style="font-family:'Syne';color:#fff;font-size:34px">m</span></div><div class="lab">monograma</div></div>
+      <div class="icw"><div class="ic" style="background:#fff;border:1px solid var(--line)"><svg class="orb orb-shadow" width="58%" height="58%"><use href="#orbSym"/></svg></div><div class="lab">white</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 · DO / DON'T ============ -->
+<section id="rules" style="border-bottom:none">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">06</span>
+      <div><div class="sec-title">Pra não voltar com cara de IA</div>
+      <div class="sec-sub">A regra de ouro: esfera é vetor com luz controlada, não um blur de gerador.</div></div>
+    </div>
+    <div class="dd">
+      <div class="ddc yes">
+        <div class="h">✓ Faça</div>
+        <div class="row"><span class="chip"><svg class="orb" width="48" height="48"><use href="#orbSym"/></svg></span> Highlight nítido e único, no canto superior-esquerdo.</div>
+        <div class="row"><span class="chip"><svg width="48" height="48"><circle cx="24" cy="24" r="22" fill="url(#orbCore)"/><circle cx="24" cy="24" r="21.4" fill="none" stroke="url(#orbRim)" stroke-width="1.2"/></svg></span> Borda crisp de 1px — a assinatura do vetor.</div>
+        <div class="row"><span class="chip"><svg width="48" height="48"><circle cx="24" cy="24" r="22" fill="url(#brandGrad)"/></svg></span> Manter a ordem violeta → rosa → coral.</div>
+      </div>
+      <div class="ddc no">
+        <div class="h">✕ Evite</div>
+        <div class="row"><span class="chip"><svg width="48" height="48"><defs><radialGradient id="blur1" cx="50%" cy="45%" r="55%"><stop offset="0%" stop-color="#ffd1c0"/><stop offset="50%" stop-color="#ff7aaa"/><stop offset="100%" stop-color="#a06cff"/></radialGradient><filter id="bl"><feGaussianBlur stdDeviation="3.2"/></filter></defs><circle cx="24" cy="24" r="20" fill="url(#blur1)" filter="url(#bl)"/></svg></span> Esfera borrada / com glow difuso — o look de gerador.</div>
+        <div class="row"><span class="chip" style="background:#0D0D14"><svg width="48" height="48" style="filter:blur(2px);opacity:.8"><circle cx="24" cy="24" r="20" fill="url(#orbCore)"/></svg></span> Sem borda, derretendo no fundo.</div>
+        <div class="row"><span class="chip"><svg width="48" height="48"><circle cx="24" cy="24" r="22" fill="url(#orbCore)" transform="rotate(180 24 24)"/></svg></span> Inverter a luz (highlight embaixo) — quebra o volume.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="pill">myDose · Logo Study v3 · Crafted</span>
+    <p style="margin-top:18px;font-size:14px">A esfera-dose, agora feita como vetor — mesma alma, acabamento de Illustrator.</p>
+  </div>
+</footer>
+
+</body>
+</html>
