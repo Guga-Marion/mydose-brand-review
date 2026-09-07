@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Operação Credibilidade · Briefing</title>
+<meta name="description" content="Versão resumida do plano de marketing e vendas da MyDose para setembro a dezembro de 2026: mensagem, oferta, números e o que o John disse.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#F6F4F2; --card:#FFFFFF; --ink:#1E1D1D; --muted:#6E6A66; --line:#E3DED8; --soft:#EFEBE6;
+  --navy:#191E47; --navy-ink:#F3F1EE; --navy-mute:#B9BEE6;
+  --blue:#415FF5; --magenta:#C64FCA; --orange:#F56442; --green:#63AC39;
+  --blue-pale:#D6DDFF; --pink-pale:#F5E3F6; --peach-pale:#FFEAE5; --green-pale:#DCEDD2;
+  --serif:"Fraunces",Georgia,"Times New Roman",serif; --sans:"Figtree","Segoe UI",Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#101226; --card:#1B1E3E; --ink:#F3F1EE; --muted:#A9ABC6; --line:#2C3058; --soft:#22264A;
+    --navy:#0B0D1C; --blue:#5C76FF; --orange:#E55D36; --magenta:#CC5CD0;
+    --blue-pale:#232A5E; --pink-pale:#3A1F3C; --peach-pale:#3F211A; --green-pale:#1F3316;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#101226; --card:#1B1E3E; --ink:#F3F1EE; --muted:#A9ABC6; --line:#2C3058; --soft:#22264A;
+  --navy:#0B0D1C; --blue:#5C76FF; --orange:#E55D36; --magenta:#CC5CD0;
+  --blue-pale:#232A5E; --pink-pale:#3A1F3C; --peach-pale:#3F211A; --green-pale:#1F3316;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:var(--blue)}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.1;margin:0;text-wrap:balance}
+h1{font-size:clamp(36px,5.5vw,60px);letter-spacing:-.01em}
+h2{font-size:clamp(26px,3vw,34px)}
+h3{font-size:19px}
+p{margin:0}
+em.sig{font-family:var(--serif);font-style:italic;font-weight:400}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.eyebrow{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.note{font-size:13px;color:var(--muted)}
+button{font-family:var(--sans)}
+button:focus-visible,a:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
+/* cover */
+.cover{background:var(--navy);color:var(--navy-ink);padding:52px 0 40px}
+.cover .eyebrow{color:var(--navy-mute)}
+.cover h1{margin:10px 0 14px}
+.cover .lead{font-size:18px;max-width:60ch;color:#C9CCE8}
+.cover .lead strong{color:#fff;font-weight:600}
+.cover .links{display:flex;gap:18px;flex-wrap:wrap;margin-top:22px;font-size:13.5px}
+.cover .links a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:1px}
+.cover .links span{color:var(--navy-mute)}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:-1px}
+.nums>div{background:var(--card);padding:18px 20px 16px}
+.nums .v{font-family:var(--serif);font-size:34px;font-weight:600;letter-spacing:-.01em;font-variant-numeric:tabular-nums;line-height:1}
+.nums .l{font-size:13px;color:var(--muted);margin-top:6px}
+
+/* sticky bar: tabs + audience filter */
+.bar{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}
+.tabs{display:flex;gap:4px;overflow-x:auto;flex:1;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs a{white-space:nowrap;text-decoration:none;color:var(--muted);font-size:13.5px;font-weight:500;padding:7px 11px;border-radius:999px}
+.tabs a:hover,.tabs a.on{color:var(--ink);background:var(--soft)}
+.aud{display:flex;gap:4px;background:var(--soft);padding:3px;border-radius:999px}
+.aud button{border:0;background:transparent;color:var(--muted);font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:999px;cursor:pointer}
+.aud button.on{background:var(--card);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.aud button.on[data-aud="copy"]{color:var(--magenta)}
+.aud button.on[data-aud="estrategia"]{color:var(--blue)}
+
+/* sections */
+section{padding:56px 0 8px;scroll-margin-top:64px}
+section:last-of-type{padding-bottom:70px}
+.head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+.head p{color:var(--muted);max-width:60ch;font-size:15px}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:1fr 1fr}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+.card h3{margin-bottom:8px}
+.card p+p{margin-top:8px}
+.card .eyebrow{margin-bottom:8px}
+
+/* audience tags + filtering */
+[data-for]{position:relative}
+.tag{position:absolute;top:12px;right:14px;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:2px 8px;border-radius:999px}
+.tag.copy{background:var(--pink-pale);color:var(--magenta)}
+.tag.estrategia{background:var(--blue-pale);color:var(--blue)}
+.tag.ambos{background:var(--soft);color:var(--muted)}
+body[data-aud="copy"] [data-for="estrategia"],
+body[data-aud="estrategia"] [data-for="copy"]{opacity:.28;filter:grayscale(1)}
+
+/* callouts */
+.callout{border-left:3px solid var(--blue);background:var(--blue-pale);padding:14px 18px;border-radius:0 12px 12px 0}
+.callout.warn{border-color:var(--orange);background:var(--peach-pale)}
+.callout.pink{border-color:var(--magenta);background:var(--pink-pale)}
+.callout.green{border-color:var(--green);background:var(--green-pale)}
+
+/* John's advice: quote cards */
+.advice{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.adv{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px 16px;display:grid;gap:8px}
+.adv b{font-size:16px;line-height:1.3}
+.adv q{font-family:var(--serif);font-style:italic;font-size:16.5px;line-height:1.4;quotes:"“" "”";color:var(--ink)}
+.adv .so{font-size:13.5px;color:var(--muted)}
+.adv .so strong{color:var(--ink);font-weight:600}
+.adv .row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:2px}
+.pill{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:999px;background:var(--soft);color:var(--muted)}
+.pill.ok{background:var(--green-pale);color:#3E7A1E}
+.pill.adapt{background:var(--peach-pale);color:#B4401F}
+.pill.later{background:var(--soft);color:var(--muted)}
+:root[data-theme="dark"] .pill.ok,.dark .pill.ok{color:#9BD877}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .pill.ok{color:#9BD877}:root:not([data-theme="light"]) .pill.adapt{color:#FF9B7E}}
+:root[data-theme="dark"] .pill.adapt{color:#FF9B7E}
+.copy{border:1px solid var(--line);background:var(--card);color:var(--muted);font-size:12px;font-weight:600;padding:5px 10px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.copy:hover{color:var(--ink);border-color:var(--muted)}
+
+/* message house */
+.house{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--card)}
+.house>div{display:grid;grid-template-columns:140px 1fr;border-bottom:1px solid var(--line)}
+.house>div:last-child{border-bottom:0}
+.house .lv{padding:14px 16px;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--muted);background:var(--soft)}
+.house .tx{padding:14px 18px;font-size:15.5px}
+.house .tx.big{font-family:var(--serif);font-size:22px;line-height:1.2}
+.lex{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.lex .card{padding-top:16px}
+.lex .words{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.lex .words span{font-size:13.5px;padding:4px 10px;border-radius:8px;background:var(--soft)}
+.lex .yes .words span{background:var(--green-pale)}
+.lex .no .words span{background:var(--peach-pale);text-decoration:line-through;text-decoration-color:var(--orange)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.chips button{border:1px solid var(--line);background:var(--card);color:var(--muted);font-size:13px;font-weight:500;padding:6px 12px;border-radius:999px;cursor:pointer}
+.chips button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.hooks{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.hook{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:grid;grid-template-columns:1fr auto;gap:10px;align-items:start}
+.hook[hidden]{display:none}
+.hook .t{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:4px}
+.hook q{font-family:var(--serif);font-size:17px;line-height:1.35;quotes:"“" "”"}
+.manifesto{font-family:var(--serif);font-size:18px;line-height:1.45;padding:22px 26px}
+.manifesto p+p{margin-top:12px}
+
+/* offer */
+.plans{display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:14px;align-items:start}
+.plan{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+.plan.hero{border:2px solid var(--blue);box-shadow:0 0 0 4px var(--blue-pale)}
+.plan .price{font-family:var(--serif);font-size:30px;font-weight:600;margin:4px 0 2px}
+.plan .price small{font-family:var(--sans);font-size:13px;font-weight:400;color:var(--muted)}
+.plan ul{margin:10px 0 0;padding-left:18px;font-size:14px}
+.plan li{margin:0 0 5px}
+.stack{counter-reset:s;display:grid;gap:8px;margin-top:14px}
+.stack div{display:grid;grid-template-columns:30px 1fr;gap:10px;font-size:14.5px;align-items:baseline}
+.stack div::before{counter-increment:s;content:counter(s);font-family:var(--serif);font-size:20px;font-weight:600;color:var(--blue)}
+
+/* numbers */
+.fig{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px 10px}
+.fig .ft{font-weight:600;margin-bottom:2px}
+.fig .fs{font-size:13px;color:var(--muted);margin-bottom:8px}
+.fig svg{width:100%;height:auto;display:block}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:520px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;background:var(--soft)}
+tr:last-child td{border-bottom:0}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.tot td{font-weight:700;background:var(--soft)}
+.months{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.mo{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--card)}
+.mo header{padding:12px 16px;color:#fff}
+.mo header b{display:block;font-family:var(--serif);font-size:18px;font-weight:600}
+.mo header span{font-size:12.5px;opacity:.9}
+.mo .b{padding:12px 16px;font-size:13.5px}
+.mo .b p+p{margin-top:6px}
+.mo .b strong{font-weight:600}
+.m1 header{background:var(--blue)} .m2 header{background:var(--magenta)} .m3 header{background:var(--orange)} .m4 header{background:#592C5A}
+
+/* decisions */
+.check{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.check li{padding-left:30px;position:relative;font-size:15px}
+.check li::before{content:"";position:absolute;left:0;top:4px;width:16px;height:16px;border:1.5px solid var(--muted);border-radius:4px}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.metric{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.metric .v{font-family:var(--serif);font-size:24px;font-weight:600;font-variant-numeric:tabular-nums}
+.metric .l{font-size:12.5px;color:var(--muted);line-height:1.35}
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+.day{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:12.5px}
+.day b{display:block;font-family:var(--serif);font-size:20px;color:var(--blue);line-height:1;margin-bottom:6px}
+
+.foot{padding:36px 0 60px;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+.foot .sig{font-family:var(--serif);font-style:italic;font-size:26px;color:var(--ink);margin-bottom:8px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:999px;font-size:13px;opacity:0;transition:.2s;pointer-events:none;z-index:30}
+.toast.on{opacity:1;transform:translateX(-50%)}
+.theme{position:fixed;right:16px;bottom:16px;z-index:20;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:7px 12px;font-size:12.5px;font-weight:600;cursor:pointer}
+
+@media (max-width:980px){.g3,.g4,.metrics{grid-template-columns:1fr 1fr}.months{grid-template-columns:1fr 1fr}.plans{grid-template-columns:1fr}.days{grid-template-columns:repeat(4,1fr)}}
+@media (max-width:640px){.g2,.g3,.g4,.advice,.lex,.hooks,.metrics,.months{grid-template-columns:1fr}.nums{grid-template-columns:1fr 1fr}.house>div{grid-template-columns:1fr}.days{grid-template-columns:repeat(2,1fr)}.cover{padding:40px 0 30px}.wrap{padding:0 16px}.bar .wrap{gap:8px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+@media print{.bar,.theme,.toast,.copy{display:none}section{padding:24px 0}}
+</style>
+</head>
+<body>
+
+<header class="cover">
+  <div class="wrap">
+    <div class="eyebrow">MyDose · Briefing de marketing e vendas · Setembro a dezembro de 2026</div>
+    <h1>Operação <em class="sig">Credibilidade</em></h1>
+    <p class="lead">Versão resumida para o time de copy e de estratégia. <strong>Uma mensagem, um produto-herói, uma oferta empilhada</strong>, para faturar R$ 750 mil em contratos anuais antecipados com R$ 8 a 10 mil de mídia por mês.</p>
+    <div class="links">
+      <a href="https://claude.ai/code/artifact/6310baea-8d77-4896-ba43-185b685e5132" target="_blank" rel="noopener">Plano completo (12 seções)</a>
+      <span>Fontes: call com o John em 2026-09-04 · Pipedrive lido em 2026-09-06 · wiki MyDose</span>
+    </div>
+  </div>
+</header>
+<div class="wrap">
+  <div class="nums">
+    <div><div class="v">R$ 750k</div><div class="l">Meta em 4 meses (150 · 180 · 220 · 200)</div></div>
+    <div><div class="v">75</div><div class="l">Contratos a R$ 10 mil de ticket médio</div></div>
+    <div><div class="v">300</div><div class="l">Reuniões-diagnóstico (25% fecham)</div></div>
+    <div><div class="v">R$ 990</div><div class="l">Plano-herói por mês, no anual</div></div>
+  </div>
+</div>
+
+<nav class="bar" aria-label="Seções">
+  <div class="wrap">
+    <div class="tabs">
+      <a href="#tese" class="on">Tese</a>
+      <a href="#john">O que o John disse</a>
+      <a href="#mensagem">Mensagem</a>
+      <a href="#oferta">Oferta</a>
+      <a href="#numeros">Números</a>
+      <a href="#calendario">Calendário</a>
+      <a href="#decisoes">Decisões</a>
+    </div>
+    <div class="aud" role="group" aria-label="Filtrar por time">
+      <button class="on" data-aud="todos">Tudo</button>
+      <button data-aud="copy">Copy</button>
+      <button data-aud="estrategia">Estratégia</button>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<!-- TESE -->
+<section id="tese">
+  <div class="head">
+    <h2>A tese em uma tela</h2>
+    <p>A MyDose não tem problema de produto. Tem problema de mensagem e de topo de funil. Corrigimos com uma escolha, não com mais coisas.</p>
+  </div>
+  <div class="grid g3">
+    <div class="card" data-for="ambos"><span class="tag ambos">ambos</span>
+      <div class="eyebrow">O diagnóstico</div>
+      <h3>O funil parou, a máquina não quebrou</h3>
+      <p>Vendas caíram de R$ 163 mil em março para R$ 39 mil em agosto enquanto o produto ganhava 14 funcionalidades. Negócios novos por mês: 75 em janeiro, 17 em agosto.</p>
+      <p>Quando houve volume, a MyDose converteu 19 a 23%. Falta topo e falta urgência, não conversão.</p>
+    </div>
+    <div class="card" data-for="ambos"><span class="tag ambos">ambos</span>
+      <div class="eyebrow">A escolha</div>
+      <h3>Vender uma coisa só</h3>
+      <p>A máquina de conteúdo e captação de pacientes mais segura da saúde, com um time ao lado. É o MyDose Scale como herói.</p>
+      <p>App do paciente, prontuário com IA, gravação, School e comunidade viram <strong>bônus empilhados na reunião</strong>. Nunca manchete.</p>
+    </div>
+    <div class="card" data-for="ambos"><span class="tag ambos">ambos</span>
+      <div class="eyebrow">A lógica</div>
+      <h3>Segurança abre, credibilidade fecha</h3>
+      <p>Segurança e parceria são o argumento racional. Credibilidade, autoridade e liberdade são o prêmio emocional.</p>
+      <p>Dinheiro é consequência e <strong>nunca abre a conversa</strong>. O profissional de saúde é avesso a "ganhar dinheiro".</p>
+    </div>
+  </div>
+  <div class="grid g4" style="margin-top:14px">
+    <div class="card" data-for="estrategia"><span class="tag estrategia">estratégia</span><div class="eyebrow">Movimento 1</div><h3>Reposicionar em 14 dias</h3><p class="note">Mensagem, página, 30 criativos, roteiro da call.</p></div>
+    <div class="card" data-for="estrategia"><span class="tag estrategia">estratégia</span><div class="eyebrow">Movimento 2</div><h3>Reacender o funil</h3><p class="note">Mídia de conversão + lançamento pago mensal + resgate de 134 contas inativas.</p></div>
+    <div class="card" data-for="estrategia"><span class="tag estrategia">estratégia</span><div class="eyebrow">Movimento 3</div><h3>Empilhar a oferta</h3><p class="note">R$ 990/mês anual com estrategista quinzenal e revisão de compliance.</p></div>
+    <div class="card" data-for="estrategia"><span class="tag estrategia">estratégia</span><div class="eyebrow">Movimento 4</div><h3>Operar por número</h3><p class="note">Custo por reunião realizada como norte. Ritual semanal. Corte rápido.</p></div>
+  </div>
+</section>
+
+<!-- JOHN -->
+<section id="john">
+  <div class="head">
+    <h2>O que o John disse</h2>
+    <p>Conversa de 46 minutos em Florianópolis, 2026-09-04. Cada cartão traz a frase dele, o que significa para nós e o que decidimos.</p>
+  </div>
+  <div class="advice">
+    <div class="adv" data-for="ambos">
+      <b>Não entre no jogo de software de gestão</b>
+      <q>Isso já tem e tem ticket de R$ 49. Qualquer um faz 45 funcionalidades amanhã com o Claude. Vocês estão productizing yourselves.</q>
+      <p class="so"><strong>Significa:</strong> a vantagem da MyDose é o time (marketing, performance, growth), não a lista de features.</p>
+      <div class="row"><span class="pill ok">Adotado</span><button class="copy" data-copy="Isso já tem e tem ticket de R$ 49. Qualquer um faz 45 funcionalidades amanhã com o Claude. Vocês estão productizing yourselves.">Copiar frase</button></div>
+    </div>
+    <div class="adv" data-for="ambos">
+      <b>O micro-nicho é produção criativa com validação e segurança</b>
+      <q>Máquina de produção de conteúdo criativo, com validação e segurança, para profissionais da saúde, que vai gerar credibilidade.</q>
+      <p class="so"><strong>Significa:</strong> produzir <em>e</em> distribuir. É o que os modelos genéricos vão demorar a fazer sozinhos.</p>
+      <div class="row"><span class="pill ok">Adotado</span><button class="copy" data-copy="Máquina de produção de conteúdo criativo, com validação e segurança, para profissionais da saúde, que vai gerar credibilidade.">Copiar frase</button></div>
+    </div>
+    <div class="adv" data-for="copy">
+      <b>Vá pela segurança, não pela fama</b>
+      <q>O maior medo do profissional de saúde é ser achado charlatão. Ele bota segurança acima de tudo.</q>
+      <p class="so"><strong>A frase que ele escreveu:</strong> "a única máquina de geração de conteúdo que passa nas regras de compliance dos conselhos federais e regionais, para profissionais de saúde que se importam com a sua credibilidade e autoridade."</p>
+      <div class="row"><span class="pill adapt">Adotado com ajuste</span><button class="copy" data-copy="A única máquina de geração de conteúdo que passa nas regras de compliance dos conselhos federais e regionais, para profissionais de saúde que se importam com a sua credibilidade e autoridade.">Copiar frase</button></div>
+    </div>
+    <div class="adv" data-for="copy">
+      <b>Parceria é o que justifica R$ 1 mil por mês</b>
+      <q>Ele não quer fazer sozinho. Por isso se justifica o ticket de mais de mil reais.</q>
+      <p class="so"><strong>Âncora:</strong> "uma agência ruim custa R$ 3 mil; você paga R$ 1 mil e gasta 10 minutos por dia." Estrategista quinzenal que faz assessment, plano e treina o modelo.</p>
+      <div class="row"><span class="pill ok">Adotado</span><button class="copy" data-copy="Uma agência ruim custa R$ 3 mil por mês. Você paga R$ 1 mil e gasta 10 minutos por dia.">Copiar frase</button></div>
+    </div>
+    <div class="adv" data-for="copy">
+      <b>Uma mensagem só. O resto é bônus</b>
+      <q>Se você comunicar duas coisas, é um caos de mensagem.</q>
+      <p class="so"><strong>Significa:</strong> comunicar atração e captação. Na call, empilhar Habits, prontuário, gravação e School como bônus: valor, oferta, bônus, escassez.</p>
+      <div class="row"><span class="pill ok">Adotado</span><button class="copy" data-copy="Se você comunicar duas coisas, é um caos de mensagem.">Copiar frase</button></div>
+    </div>
+    <div class="adv" data-for="estrategia">
+      <b>Double down no Scale. Habits fica vivo, sem investimento</b>
+      <q>Você não precisa matar a feature. Deixa quem usa usando. Mas o double down de marketing e de roadmap tem que estar aqui.</q>
+      <p class="so"><strong>Decisão:</strong> Habits segue como bônus e âncora de adesão (melhor CTR histórico). Sem roadmap novo nem mídia até janeiro.</p>
+      <div class="row"><span class="pill adapt">Adaptado</span><button class="copy" data-copy="Você não precisa matar a feature. Deixa quem usa usando. Mas o double down de marketing e de roadmap tem que estar aqui.">Copiar frase</button></div>
+    </div>
+    <div class="adv" data-for="estrategia">
+      <b>Lançamento pago como porta de entrada</b>
+      <q>Eu acredito muito em lançamento pago para você.</q>
+      <p class="so"><strong>Formato:</strong> evento ao vivo a R$ 19, "a estratégia de conteúdo de uma nutricionista do zero em 40 minutos", em slides, com case real, oferta só no fim. Um por mês, por persona.</p>
+      <div class="row"><span class="pill ok">Adotado</span><button class="copy" data-copy="Vamos construir do zero a estratégia de conteúdo de uma nutricionista em 40 minutos.">Copiar frase</button></div>
+    </div>
+    <div class="adv" data-for="copy">
+      <b>O momento de dor decide quem compra o quê</b>
+      <q>Não é a gente que pensa o pensamento; é o pensamento que pensa a gente.</q>
+      <p class="so"><strong>Significa:</strong> quem procura prontuário não está no mesmo momento de quem procura paciente. Falar com os dois ao mesmo tempo não fala com nenhum.</p>
+      <div class="row"><span class="pill ok">Adotado</span><button class="copy" data-copy="Não é a gente que pensa o pensamento; é o pensamento que pensa a gente.">Copiar frase</button></div>
+    </div>
+    <div class="adv" data-for="estrategia">
+      <b>Encurte o tempo até o valor</b>
+      <q>O time to value tem que ser dia zero.</q>
+      <p class="so"><strong>Decisão:</strong> primeiro conteúdo publicado na primeira semana. Implementação em 7 dias vira bônus de decisão e métrica anti-churn.</p>
+      <div class="row"><span class="pill ok">Adotado</span><button class="copy" data-copy="O time to value tem que ser dia zero.">Copiar frase</button></div>
+    </div>
+    <div class="adv" data-for="estrategia">
+      <b>Global é outro jogo</b>
+      <q>Freemium, créditos vendidos como vídeos, três faixas, "fale com vendas" no topo. Não misturar com o Brasil agora.</q>
+      <p class="so"><strong>Decisão:</strong> fora do escopo de caixa deste ciclo. O Brasil valida a mensagem, que depois vira o criativo global.</p>
+      <div class="row"><span class="pill later">Adiado para 2027</span></div>
+    </div>
+  </div>
+  <div class="callout pink" style="margin-top:14px" data-for="ambos">
+    <p><strong>O que ele validou do produto</strong> ("tá muito bom o seu produto"): o chat com os agentes, o roteirista que embasa com artigo científico, o comando por áudio, a integração com a Business Manager da Meta e o conteúdo caindo no WhatsApp. <strong>Esse é o demo da call:</strong> do áudio ao post publicado ao lead no WhatsApp.</p>
+  </div>
+</section>
+
+<!-- MENSAGEM -->
+<section id="mensagem">
+  <div class="head">
+    <h2>A mensagem</h2>
+    <p>Para quem estudou dez anos para cuidar de gente e sente vergonha de "fazer marketing". Não pede que vire vendedor. Dá um jeito seguro de ser visto como o profissional que já é.</p>
+  </div>
+  <div class="house" data-for="copy">
+    <div><div class="lv">Assinatura</div><div class="tx big"><em class="sig">Take back control.</em> <span class="note">sempre em inglês, nunca botão</span></div></div>
+    <div><div class="lv">Manchete</div><div class="tx big">Apareça com segurança. Cresça com credibilidade.</div></div>
+    <div><div class="lv">Promessa</div><div class="tx">A MyDose cria, revisa e distribui o seu conteúdo com evidência científica e dentro das normas do seu conselho, e transforma quem te assiste em paciente pelo WhatsApp. Com um estrategista ao seu lado.</div></div>
+    <div><div class="lv">Prêmio</div><div class="tx">Ser reconhecido como referência, ter uma comunidade que confia em você e uma agenda que não depende de você estar nela.</div></div>
+    <div><div class="lv">Ritual</div><div class="tx">A Reunião-Diagnóstico: examinamos o seu consultório como você examina um paciente. CTA: <strong>Quero meu diagnóstico</strong>.</div></div>
+    <div><div class="lv">Prova</div><div class="tx">Habits, prontuário com IA, gravação, School, comunidade, painel. Só na demo e na tabela. Nunca na abertura.</div></div>
+  </div>
+
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card" data-for="copy"><span class="tag copy">copy</span>
+      <div class="eyebrow">Lado racional · segurança</div>
+      <h3>Os dois medos</h3>
+      <p>Medo um: ser visto como charlatão ou notificado pelo conselho (CFM, CRP, CFN, CREFITO). Medo dois: publicar algo errado, sem base, e perder o respeito dos pares.</p>
+      <p><strong>Resposta:</strong> conteúdo com evidência (PubMed, Nature, diretrizes), revisão de compliance, LGPD e sigilo.</p>
+    </div>
+    <div class="card" data-for="copy"><span class="tag copy">copy</span>
+      <div class="eyebrow">Lado emocional · identidade</div>
+      <h3>Os quatro desejos</h3>
+      <p>Ser visto como inovador e referência. Ter comunidade, não audiência. Ter liberdade de agenda. Estar em paz com o dinheiro, não "ficar rico".</p>
+      <p><strong>Permissão do manifesto:</strong> crescer é cumprir o juramento em escala.</p>
+    </div>
+  </div>
+
+  <div class="lex" style="margin-top:14px">
+    <div class="card yes" data-for="copy"><span class="tag copy">copy</span>
+      <div class="eyebrow">Sempre</div>
+      <div class="words"><span>segurança</span><span>dentro das normas do seu conselho</span><span>evidência científica</span><span>credibilidade</span><span>autoridade</span><span>referência</span><span>comunidade</span><span>liberdade de agenda</span><span>faturamento</span><span>empreendedor da saúde</span><span>diagnóstico do consultório</span><span>estrategista ao seu lado</span><span>a gente faz com você</span><span>Take back control.</span></div>
+    </div>
+    <div class="card no" data-for="copy"><span class="tag copy">copy</span>
+      <div class="eyebrow">Nunca</div>
+      <div class="words"><span>receita (para dinheiro)</span><span>fique rico / ganhe dinheiro</span><span>ROI garantido</span><span>primeira venda em 30 dias</span><span>grátis em CTA</span><span>CRM, funil, tráfego, lead na abertura</span><span>squad</span><span>gravar a sessão (psi)</span><span>você é ruim de marketing</span><span>citar concorrente</span><span>14 funcionalidades</span></div>
+      <p class="note" style="margin-top:10px">A lista de funcionalidades foi o que quebrou a mensagem.</p>
+    </div>
+  </div>
+
+  <h3 style="margin:28px 0 10px">Hooks por persona (0 a 3 segundos)</h3>
+  <div class="chips" role="group" aria-label="Filtrar hooks por persona">
+    <button class="on" data-p="todas">Todas</button>
+    <button data-p="geral">Geral</button>
+    <button data-p="medico">Médico</button>
+    <button data-p="nutri">Nutricionista</button>
+    <button data-p="psi">Psicólogo</button>
+  </div>
+  <div class="hooks" data-for="copy">
+    <div class="hook" data-p="geral"><div><div class="t">Geral · reframe</div><q>Você não tem medo de aparecer. Você tem medo de aparecer errado. Existe um jeito de aparecer certo.</q></div><button class="copy">Copiar</button></div>
+    <div class="hook" data-p="geral"><div><div class="t">Geral · confronto com método</div><q>Tem gente com metade da sua formação e o dobro da sua audiência. Não é injustiça. É que ela publica toda semana e você trava.</q></div><button class="copy">Copiar</button></div>
+    <div class="hook" data-p="medico"><div><div class="t">Médico · segurança</div><q>Dá para publicar todo dia sem risco com o CFM? Dá. Cada post nasce de um artigo e passa por revisão de compliance antes de ir ao ar.</q></div><button class="copy">Copiar</button></div>
+    <div class="hook" data-p="nutri"><div><div class="t">Nutricionista · comunidade</div><q>Seu paciente tem uma hora com você e 720 sem você. Quem cuida das outras 720 é a sua comunidade.</q></div><button class="copy">Copiar</button></div>
+    <div class="hook" data-p="psi"><div><div class="t">Psicólogo · ética</div><q>Conteúdo ético não precisa ser invisível. Roteiro com base científica, dentro do código do CFP, pronto para você gravar em dez minutos.</q></div><button class="copy">Copiar</button></div>
+    <div class="hook" data-p="geral"><div><div class="t">Geral · liberdade</div><q>Médico bom não é o que atende mais. É o que precisa atender menos.</q></div><button class="copy">Copiar</button></div>
+    <div class="hook" data-p="geral"><div><div class="t">Geral · parceria</div><q>Uma agência ruim custa R$ 3 mil por mês e não sabe o que é um conselho de classe. Você paga um terço, gasta dez minutos por dia e tem um estrategista da saúde do seu lado.</q></div><button class="copy">Copiar</button></div>
+    <div class="hook" data-p="geral"><div><div class="t">Geral · seguidor × paciente</div><q>Seguidor não é paciente. Comunidade é.</q></div><button class="copy">Copiar</button></div>
+  </div>
+  <p class="note" style="margin-top:10px">Regra dos hooks: prova antes de explicação, mecanismo em uma frase, funciona sem áudio, uma ideia por peça, 25 a 40 s. Os 3 primeiros segundos mudam por persona; o corpo é o mesmo.</p>
+
+  <div class="grid g2" style="margin-top:22px">
+    <div class="card manifesto" data-for="copy">
+      <div class="eyebrow" style="font-family:var(--sans)">Manifesto curto · 45 s · abertura do evento e do vídeo de marca</div>
+      <p style="margin-top:10px">Você estudou dez anos para cuidar de gente. Ninguém te ensinou a ser visto.</p>
+      <p>Então você olha o feed e vê gente com metade da sua formação falando com o dobro do seu público. E pensa: não vou me expor, não vou virar influenciador, não vou correr risco com o conselho.</p>
+      <p>A gente concorda com você. Por isso construiu o contrário de um guru: uma máquina de conteúdo que começa na evidência, passa pelas normas do seu conselho e termina num paciente no seu WhatsApp. Com gente da saúde do seu lado.</p>
+      <p>Aparecer com segurança não é vaidade. É cuidar de mais gente, cuidando melhor. <em class="sig">Take back control.</em></p>
+    </div>
+    <div class="card" data-for="copy"><span class="tag copy">copy</span>
+      <div class="eyebrow">Ideias-semente dos 30 criativos</div>
+      <h3>10 ideias × 3 personas</h3>
+      <ol style="margin:0;padding-left:20px;font-size:14.5px;line-height:1.45">
+        <li><strong>Aparecer errado × aparecer certo.</strong> Post de guru × post com artigo citado.</li>
+        <li><strong>Do áudio ao post.</strong> Screen-record: áudio de 20 s vira roteiro, legenda e vídeo.</li>
+        <li><strong>Metade da formação, dobro da audiência.</strong> Feed com 4 perfis no mesmo trend.</li>
+        <li><strong>Dá pra fazer isso? (médico).</strong> Pergunta à esquerda, app gera roteiro com PubMed.</li>
+        <li><strong>Seguidor não é paciente.</strong> Contador de seguidores × agenda vazia.</li>
+        <li><strong>A agência que não sabe o que é conselho.</strong> Pix de R$ 3.000.</li>
+        <li><strong>Depoimento com case.</strong> Cliente real de R$ 17.640 à câmera.</li>
+        <li><strong>Enquanto você atende.</strong> Consulta × notificações de venda.</li>
+        <li><strong>Ética não é invisível (psi).</strong> Tela do CFP × roteiro aprovado.</li>
+        <li><strong>Manifesto.</strong> VO do Guga, texto ao lado.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- OFERTA -->
+<section id="oferta">
+  <div class="head">
+    <h2>A oferta</h2>
+    <p>Um plano-herói apresentado como caminho, não como tabela. Quem não pode entra na escada; quem quer o time inteiro sobe.</p>
+  </div>
+  <div class="plans">
+    <div class="plan" data-for="ambos">
+      <div class="eyebrow">Down-sell</div>
+      <h3>Solo Pilot</h3>
+      <div class="price">R$ 390 <small>/mês · anual · TCV R$ 4.680</small></div>
+      <p class="note">Você toca, com IA e School.</p>
+      <ul><li>Plataforma inteira (Scale + Habits + School)</li><li>Até 50 pacientes ativos</li><li>Suporte por chat, sem estrategista</li></ul>
+    </div>
+    <div class="plan hero" data-for="ambos">
+      <div class="eyebrow" style="color:var(--blue)">Herói · o que a mídia vende</div>
+      <h3>Co-Pilot Credibilidade</h3>
+      <div class="price">R$ 990 <small>/mês · anual · TCV R$ 11.880</small></div>
+      <p class="note">A gente faz com você. Semestral R$ 1.090 · trimestral R$ 1.290.</p>
+      <ul>
+        <li><strong>Máquina de conteúdo</strong> com evidência científica</li>
+        <li><strong>Revisão de compliance</strong> mensal (checklist do conselho)</li>
+        <li><strong>Estrategista quinzenal</strong> em grupo pequeno</li>
+        <li><strong>Distribuição:</strong> anúncios montados por nós + WhatsApp</li>
+        <li>No ar em 7 dias · até 250 pacientes</li>
+      </ul>
+    </div>
+    <div class="plan" data-for="ambos">
+      <div class="eyebrow">Upsell</div>
+      <h3>Auto-Pilot</h3>
+      <div class="price">R$ 1.990 <small>/mês · anual · TCV R$ 23.880</small></div>
+      <p class="note">A gente faz por você.</p>
+      <ul><li>Time cria o conteúdo e gere os anúncios</li><li>Estrategista dedicado</li><li>Pacientes ilimitados</li></ul>
+    </div>
+  </div>
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card" data-for="copy"><span class="tag copy">copy</span>
+      <div class="eyebrow">O empilhamento na reunião</div>
+      <div class="stack">
+        <div><span><strong>Valor antes de vender:</strong> o diagnóstico do consultório dele e um roteiro gerado com o nome dele durante a call.</span></div>
+        <div><span><strong>A oferta:</strong> "uma agência cobra R$ 3 mil e não entende de conselho. Aqui é R$ 990 por mês, no anual."</span></div>
+        <div><span><strong>Bônus nomeados com valor:</strong> app do paciente (R$ 4.800/ano) · prontuário e gravação (R$ 2.400/ano) · School (curso de R$ 2 a 5 mil) · comunidade e checkout sem % · migração feita por nós.</span></div>
+        <div><span><strong>Garantias:</strong> 30 dias · sem fidelidade-armadilha · sigilo, ética e LGPD · sem % sobre as suas vendas.</span></div>
+        <div><span><strong>Escassez honesta:</strong> vagas de implementação por mês (sugestão: 20). Bônus de decisão: implementação prioritária em 7 dias.</span></div>
+      </div>
+    </div>
+    <div class="callout warn" data-for="estrategia">
+      <p><strong>O que muda em relação ao site atual.</strong> O Co-Pilot de hoje custa R$ 890 e não inclui criação de conteúdo nem anúncios. O plano-herói sobe R$ 100 e ganha exatamente o que a mensagem promete. É isso que sustenta o TCV médio de R$ 10 mil com mix 25% Solo, 60% Co-Pilot, 15% Auto-Pilot.</p>
+      <p style="margin-top:10px"><strong>Vetos que continuam:</strong> sem "ROI garantido" e sem "primeira venda em 30 dias". O resultado imediato vendido é o diagnóstico e o primeiro conteúdo no ar na primeira semana.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NÚMEROS -->
+<section id="numeros">
+  <div class="head">
+    <h2>Os números</h2>
+    <p>Da meta para trás, com as taxas-alvo já fixadas: lead para agendado 40%, show 65%, fechamento 25%, TCV médio R$ 10 mil.</p>
+  </div>
+  <div class="grid g2">
+    <div class="fig" data-for="estrategia">
+      <p class="ft">Faturamento fechado por mês e a meta</p>
+      <p class="fs">Pipedrive · R$ mil · barras cheias = fechado · vazadas = meta do plano</p>
+      <svg id="ch" viewBox="0 0 640 240" role="img" aria-label="Vendas de setembro de 2025 a agosto de 2026 e meta de setembro a dezembro de 2026"></svg>
+    </div>
+    <div class="grid" style="gap:10px;align-content:start">
+      <div class="card" data-for="estrategia"><span class="tag estrategia">estratégia</span><div class="eyebrow">Sintoma 1</div><h3>O topo secou</h3><p class="note">Negócios novos por mês: 75 em janeiro, 41 em junho, 17 em agosto. Menos reunião, menos venda.</p></div>
+      <div class="card" data-for="copy"><span class="tag copy">copy</span><div class="eyebrow">Sintoma 2</div><h3>O lead esfria em silêncio</h3><p class="note">Dos 500 perdidos recentes, 40% "pararam de responder". Preço e orçamento são só 9%. Falta urgência, não desconto.</p></div>
+      <div class="card" data-for="estrategia"><span class="tag estrategia">estratégia</span><div class="eyebrow">Sintoma 3</div><h3>A base vaza</h3><p class="note">63 canceladas, 17 travadas, 13 em reembolso, 14 em stand-by contra ~65 ativas. Cada venda precisa vir com adoção.</p></div>
+    </div>
+  </div>
+
+  <div class="tablewrap" style="margin-top:14px" data-for="estrategia"><table>
+    <thead><tr><th>Etapa</th><th class="n">Set</th><th class="n">Out</th><th class="n">Nov</th><th class="n">Dez</th><th class="n">Total</th></tr></thead>
+    <tbody>
+      <tr class="tot"><td>Meta de faturamento (TCV)</td><td class="n">R$ 150k</td><td class="n">R$ 180k</td><td class="n">R$ 220k</td><td class="n">R$ 200k</td><td class="n">R$ 750k</td></tr>
+      <tr><td>Contratos</td><td class="n">15</td><td class="n">18</td><td class="n">22</td><td class="n">20</td><td class="n">75</td></tr>
+      <tr><td>Reuniões realizadas</td><td class="n">60</td><td class="n">72</td><td class="n">88</td><td class="n">80</td><td class="n">300</td></tr>
+      <tr><td>Reuniões agendadas</td><td class="n">92</td><td class="n">111</td><td class="n">135</td><td class="n">123</td><td class="n">461</td></tr>
+      <tr><td>Leads qualificados</td><td class="n">231</td><td class="n">277</td><td class="n">339</td><td class="n">308</td><td class="n">1.155</td></tr>
+      <tr><td>Mídia</td><td class="n">R$ 8k</td><td class="n">R$ 9k</td><td class="n">R$ 10k</td><td class="n">R$ 9k</td><td class="n">R$ 36k</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="grid g4" style="margin-top:14px">
+    <div class="card" data-for="estrategia"><div class="eyebrow">Mídia paga · 45%</div><p class="note">Clique-para-WhatsApp a R$ 60–75 por lead. 120–160 leads/mês. O piso que a MyDose sabe operar.</p></div>
+    <div class="card" data-for="estrategia"><div class="eyebrow">Lançamento pago · 20%</div><p class="note">Um evento a R$ 19 por mês. 150–250 ingressos, 60% presença, 40% pedem diagnóstico: 40–60 leads quentes.</p></div>
+    <div class="card" data-for="estrategia"><div class="eyebrow">Base e indicação · 25%</div><p class="note">134 contas inativas + 65 ativas. Resgate pessoal do Guga e "traga um colega, um mês por nossa conta". 50–80 conversas.</p></div>
+    <div class="card" data-for="estrategia"><div class="eyebrow">Orgânico e parcerias · 10%</div><p class="note">Cortes dos eventos, aula de quarta, Vida Leve, 3–5 creators da saúde com cupom. 20–40 leads.</p></div>
+  </div>
+  <div class="callout green" style="margin-top:14px" data-for="estrategia">
+    <p><strong>A conta do lucro.</strong> Custo fixo R$ 80 mil + mídia R$ 9 mil. Ponto de equilíbrio: 9 contratos anuais por mês. Caixa no plano em 4 meses: R$ 750 mil − R$ 356 mil = <strong>R$ 394 mil</strong>, se o contrato entra antecipado. <strong>O gargalo é o SDR, não a mídia:</strong> novembro pede 135 agendadas contra 80–100 de capacidade atual.</p>
+  </div>
+</section>
+
+<!-- CALENDÁRIO -->
+<section id="calendario">
+  <div class="head">
+    <h2>Mês a mês</h2>
+    <p>Cada mês tem um tema, um evento pago, um resultado e um critério de corte. O que não bate número em duas semanas sai.</p>
+  </div>
+  <div class="months" data-for="estrategia">
+    <div class="mo m1"><header><b>Setembro</b><span>R$ 150 mil · 15 contratos</span></header><div class="b">
+      <p><strong>Reposicionar e reacender.</strong> Página nova, 30 criativos, 3 campanhas (segurança / comunidade / liberdade), cadência SDR, resgate das 134 contas.</p>
+      <p><strong>Evento 24/09:</strong> estratégia de conteúdo de uma nutricionista, do zero, em 40 min.</p>
+      <p><strong>Corte:</strong> custo por reunião ≤ R$ 150 e ≥ 12 contratos até 30/09.</p>
+    </div></div>
+    <div class="mo m2"><header><b>Outubro</b><span>R$ 180 mil · 18 contratos</span></header><div class="b">
+      <p><strong>Escalar o que funcionou.</strong> Campanha vencedora com 60% da verba. 20 criativos novos dos cortes do evento e dos primeiros depoimentos.</p>
+      <p><strong>Evento 22/10:</strong> médicos. "Publicar todo dia sem risco com o CFM." Programa de indicação e creators no ar.</p>
+      <p><strong>Corte:</strong> 18 contratos e show ≥ 65%.</p>
+    </div></div>
+    <div class="mo m3"><header><b>Novembro</b><span>R$ 220 mil · 22 contratos</span></header><div class="b">
+      <p><strong>O pico.</strong> Semana de eventos 17 a 19/11 (nutri, médico, psi). Reforço de SDR ou fundadores nas calls.</p>
+      <p><strong>Corte:</strong> 22 contratos; tempo de resposta ≤ 5 min mesmo no volume.</p>
+    </div></div>
+    <div class="mo m4"><header><b>Dezembro</b><span>R$ 200 mil · 20 contratos</span></header><div class="b">
+      <p><strong>Fechar o ano com lucro.</strong> "Comece 2027 no ar" + renovações antecipadas da base de jan–mar (42 contratos vencendo). Fechar até 18/12.</p>
+      <p><strong>Corte:</strong> R$ 200 mil somando novos e renovações; lucro acumulado ≥ R$ 350 mil.</p>
+    </div></div>
+  </div>
+  <h3 style="margin:28px 0 10px">Os primeiros 14 dias</h3>
+  <div class="days" data-for="estrategia">
+    <div class="day"><b>D1</b>Mensagem e oferta aprovadas. Este briefing vira o brief do time.</div>
+    <div class="day"><b>D3</b>Página de diagnóstico nova, clique-para-WhatsApp, CRM plugado, número da Carol.</div>
+    <div class="day"><b>D5</b>30 criativos gravados em uma diária (Guga, Dr. Arthur, 2 clientes).</div>
+    <div class="day"><b>D7</b>3 campanhas × 2 destinos no ar. Cadência T1–T6 e role-play da call.</div>
+    <div class="day"><b>D8</b>134 mensagens pessoais de resgate ao longo de 5 dias.</div>
+    <div class="day"><b>D10</b>Evento anunciado, ingressos a R$ 19, verba de evento ligada.</div>
+    <div class="day"><b>D14</b>Primeira leitura: custo por reunião por campanha, corte da pior.</div>
+  </div>
+</section>
+
+<!-- DECISÕES -->
+<section id="decisoes">
+  <div class="head">
+    <h2>Decisões e métricas de corte</h2>
+    <p>O que o Guga precisa bater até 15/09 e o painel de segunda-feira, 9h, 30 minutos.</p>
+  </div>
+  <div class="grid g2">
+    <div class="card" data-for="estrategia"><span class="tag estrategia">estratégia</span>
+      <div class="eyebrow">Decisões do Guga até 15/09</div>
+      <ul class="check" style="margin-top:10px">
+        <li>Aprovar a manchete "Apareça com segurança. Cresça com credibilidade." como mensagem única.</li>
+        <li>Aprovar o Co-Pilot Credibilidade a R$ 990/mês com conteúdo + compliance + estrategista + anúncios. Ou manter R$ 890 e reduzir escopo.</li>
+        <li>Fixar a capacidade real de implementações por mês (a escassez honesta).</li>
+        <li>Quem revisa compliance: Dr. Arthur + checklist por conselho, ou parceiro externo.</li>
+        <li>Número real da Carol no site e na página de diagnóstico.</li>
+        <li>Datas dos eventos: 24/09, 22/10 e 17 a 19/11.</li>
+        <li>Reforço de SDR para novembro: contratar ou assumir calls.</li>
+      </ul>
+    </div>
+    <div class="card" data-for="copy"><span class="tag copy">copy</span>
+      <div class="eyebrow">O que o time de copy entrega</div>
+      <ul class="check" style="margin-top:10px">
+        <li>Página de diagnóstico: hero, agitação, mecanismo em 3 passos, prova, 3 controles, garantias, FAQ anti-objeção, fecho navy.</li>
+        <li>30 criativos: 10 ideias-semente × 3 personas, roteiro de 25 a 40 s cada.</li>
+        <li>Cadência de WhatsApp T1 a T6 (≤ 5 min, +2 h, D+1, D+3, D+5, D+7 break-up).</li>
+        <li>Roteiro do lançamento pago (60 min) e da Reunião-Diagnóstico (45 min).</li>
+        <li>Sequência de 7 e-mails "Aparecer com segurança" (D0 a D14).</li>
+        <li>Convite do evento (30 s) e mensagem de resgate pessoal do Guga.</li>
+        <li>Checklist de compliance por conselho, escrito com o Dr. Arthur até 20/09.</li>
+      </ul>
+    </div>
+  </div>
+  <h3 style="margin:28px 0 10px">Painel semanal · alvo e ação se ficar abaixo</h3>
+  <div class="metrics" data-for="estrategia">
+    <div class="metric"><div class="v">≤ R$ 150</div><div class="l"><strong>Custo por reunião realizada</strong> (norte). Abaixo: trocar hook, mover verba para evento e remarketing.</div></div>
+    <div class="metric"><div class="v">≤ 5 min</div><div class="l"><strong>Primeira resposta.</strong> Abaixo: automação de T1 + alerta no celular do SDR.</div></div>
+    <div class="metric"><div class="v">≥ 40%</div><div class="l"><strong>Lead → agendado.</strong> Abaixo: revisar T1/T2; oferecer o evento como porta.</div></div>
+    <div class="metric"><div class="v">≥ 65%</div><div class="l"><strong>Show rate.</strong> Abaixo: micro-compromisso obrigatório (trazer 1 número) e confirmação D-1 em vídeo.</div></div>
+    <div class="metric"><div class="v">≥ 25%</div><div class="l"><strong>Fechamento na call.</strong> Abaixo: role-play do empilhamento; revisar bônus de decisão.</div></div>
+    <div class="metric"><div class="v">≥ R$ 10k</div><div class="l"><strong>TCV médio.</strong> Abaixo de R$ 8 mil, o Solo está canibalizando: tirar da call.</div></div>
+    <div class="metric"><div class="v">≤ 7 dias</div><div class="l"><strong>Primeiro conteúdo no ar</strong> após o contrato. É a métrica anti-churn.</div></div>
+    <div class="metric"><div class="v">58–85</div><div class="l"><strong>Leads qualificados por semana.</strong> Subir verba só com custo por reunião no alvo.</div></div>
+  </div>
+  <div class="callout" style="margin-top:14px" data-for="estrategia">
+    <p><strong>Filtro contra dispersão</strong> (PLG global, Clinics, novas features): entra caixa em até 90 dias? Se não, janeiro. É a regra da missão Runway.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="sig">Take back control.</div>
+    <p>Resumo do plano Operação Credibilidade v1.0 (2026-09-06). Fontes: transcrição da conversa com o John (2026-09-04, 46 min) · Pipedrive (pipelines de vendas e de sucesso do cliente) · plano de negócios e growth H2/2026 · casa da mensagem v4 · guia de hooks e retenção · missão Runway. Números de meta são premissas, não previsões.</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast">Copiado</div>
+<button class="theme" id="themeBtn" type="button">Tema</button>
+
+<script>
+(function(){
+  var root=document.documentElement, body=document.body;
+  try{var t=localStorage.getItem('oc-theme');if(t)root.setAttribute('data-theme',t);}catch(e){}
+  document.getElementById('themeBtn').addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme');
+    var dark=cur?cur==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var n=dark?'light':'dark'; root.setAttribute('data-theme',n);
+    try{localStorage.setItem('oc-theme',n);}catch(e){}
+    draw();
+  });
+
+  // audience filter
+  var audBtns=[].slice.call(document.querySelectorAll('.aud button'));
+  audBtns.forEach(function(b){b.addEventListener('click',function(){
+    audBtns.forEach(function(x){x.classList.toggle('on',x===b);});
+    var v=b.getAttribute('data-aud');
+    if(v==='todos')body.removeAttribute('data-aud');else body.setAttribute('data-aud',v);
+  });});
+
+  // persona chips
+  var chips=[].slice.call(document.querySelectorAll('.chips button'));
+  var hooks=[].slice.call(document.querySelectorAll('.hook'));
+  chips.forEach(function(c){c.addEventListener('click',function(){
+    chips.forEach(function(x){x.classList.toggle('on',x===c);});
+    var p=c.getAttribute('data-p');
+    hooks.forEach(function(h){h.hidden=!(p==='todas'||h.getAttribute('data-p')===p);});
+  });});
+
+  // copy buttons
+  var toast=document.getElementById('toast'),tm;
+  function flash(msg){toast.textContent=msg;toast.classList.add('on');clearTimeout(tm);tm=setTimeout(function(){toast.classList.remove('on');},1400);}
+  [].slice.call(document.querySelectorAll('.copy')).forEach(function(b){
+    b.addEventListener('click',function(){
+      var txt=b.getAttribute('data-copy');
+      if(!txt){var q=b.parentNode.querySelector('q');txt=q?q.textContent:'';}
+      if(navigator.clipboard&&txt){navigator.clipboard.writeText(txt).then(function(){flash('Copiado');},function(){flash('Não deu para copiar');});}
+      else flash('Não deu para copiar');
+    });
+  });
+
+  // chart
+  function css(v){return getComputedStyle(root).getPropertyValue(v).trim();}
+  function el(n,a){var e=document.createElementNS('http://www.w3.org/2000/svg',n);for(var k in a)e.setAttribute(k,a[k]);return e;}
+  function draw(){
+    var s=document.getElementById('ch'); s.innerHTML='';
+    var ink=css('--ink'),muted=css('--muted'),grid=css('--line'),c1=css('--blue'),c2=css('--orange');
+    var labels=['set','out','nov','dez','jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
+    var real=[29802,99535,69552,54295,130380,141080,162840,98142,94800,84876,67806,39120];
+    var meta=[150000,180000,220000,200000];
+    var W=640,H=240,L=40,R=8,T=16,B=32,max=240000,n=16,bw=(W-L-R)/n;
+    var y=function(v){return T+(H-T-B)*(1-v/max);};
+    [0,80000,160000,240000].forEach(function(v){
+      s.appendChild(el('line',{x1:L,x2:W-R,y1:y(v),y2:y(v),stroke:grid,'stroke-width':1}));
+      var t=el('text',{x:L-6,y:y(v)+4,'text-anchor':'end','font-size':10,fill:muted,'font-family':'Figtree, sans-serif'});t.textContent=(v/1000)+'k';s.appendChild(t);
+    });
+    for(var i=0;i<n;i++){
+      var x=L+i*bw+bw*.2,w=bw*.6,v=i<12?real[i]:meta[i-12],isMeta=i>=12;
+      var r=el('rect',{x:x,y:y(v),width:w,height:Math.max(0,y(0)-y(v)),rx:2,fill:isMeta?'transparent':c1,stroke:isMeta?c2:'none','stroke-width':isMeta?1.5:0,'stroke-dasharray':isMeta?'4 3':''});
+      var title=el('title',{});title.textContent=labels[i]+': R$ '+Math.round(v/1000)+' mil'+(isMeta?' (meta)':'');r.appendChild(title);
+      s.appendChild(r);
+      if(i===6||i===11||isMeta){var vt=el('text',{x:x+w/2,y:y(v)-5,'text-anchor':'middle','font-size':10,fill:ink,'font-weight':600,'font-family':'Figtree, sans-serif'});vt.textContent=Math.round(v/1000)+'k';s.appendChild(vt);}
+      var lt=el('text',{x:x+w/2,y:H-B+15,'text-anchor':'middle','font-size':10,fill:muted,'font-family':'Figtree, sans-serif'});lt.textContent=labels[i];s.appendChild(lt);
+    }
+    s.appendChild(el('line',{x1:L,x2:W-R,y1:y(0),y2:y(0),stroke:muted,'stroke-width':1}));
+    var sep=L+12*bw; s.appendChild(el('line',{x1:sep,x2:sep,y1:T,y2:y(0),stroke:muted,'stroke-width':1,'stroke-dasharray':'3 3'}));
+    var y0=el('text',{x:L+4*bw,y:H-4,'text-anchor':'middle','font-size':9.5,fill:muted,'font-family':'Figtree, sans-serif'});y0.textContent='2025 · 2026 fechado';s.appendChild(y0);
+    var y1=el('text',{x:sep+2*bw,y:H-4,'text-anchor':'middle','font-size':9.5,fill:muted,'font-family':'Figtree, sans-serif'});y1.textContent='meta 2026';s.appendChild(y1);
+  }
+  draw();
+  if(window.matchMedia){window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',draw);}
+
+  // active tab
+  var links=[].slice.call(document.querySelectorAll('.tabs a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
+  function onS(){var i=0,yy=window.scrollY+90;secs.forEach(function(s,k){if(s&&s.offsetTop<=yy)i=k;});links.forEach(function(a,k){a.classList.toggle('on',k===i);});}
+  window.addEventListener('scroll',onS,{passive:true});onS();
+})();
+</script>
+</body>
+</html>
